@@ -31,6 +31,17 @@ const twilioClient = twilio(
   process.env.TWILIO_AUTH_TOKEN
 );
 
+// Normalize phone number - remove 'whatsapp:' prefix if present
+function normalizePhoneNumber(phone) {
+  return phone.replace('whatsapp:', '');
+}
+
+// Format phone number for WhatsApp sending
+function formatForWhatsApp(phone) {
+  const normalized = normalizePhoneNumber(phone);
+  return `whatsapp:${normalized}`;
+}
+
 // System prompt for Arlo
 const ARLO_SYSTEM_PROMPT = `You are Arlo, an AI performance and lifestyle coach. You communicate via text message with athletes and high performers.
 
@@ -48,13 +59,50 @@ app.get('/', (req, res) => {
   res.send('Arlo backend is running ✅');
 });
 
-// Twilio webhook for incoming SMS (and future Apple Messages via Twilio)
-app.post('/sms', async (req, res) => {
-  const { From, Body, MessageSid } = req.body;
-  const userPhone = From;
-  const userMessage = Body;
+// Send WhatsApp template message (for onboarding)
+async function sendWhatsAppTemplate(toPhone, userName) {
+  try {
+    const message = await twilioClient.messages.create({
+      from: formatForWhatsApp(process.env.TWILIO_WHATSAPP_NUMBER),
+      to: formatForWhatsApp(toPhone),
+      contentSid: process.env.WHATSAPP_TEMPLATE_SID, // Template SID from Meta
+      contentVariables: JSON.stringify({
+        "1": userName // Variable for {{1}} in template
+      })
+    });
+    console.log(`Template message sent to ${toPhone}: ${message.sid}`);
+    return message;
+  } catch (error) {
+    console.error(`Error sending template to ${toPhone}:`, error);
+    throw error;
+  }
+}
 
-  console.log(`Message from ${userPhone}: ${userMessage}`);
+// Endpoint for Zapier to trigger welcome template
+app.post('/send-welcome', async (req, res) => {
+  const { phone, name } = req.body;
+  
+  if (!phone || !name) {
+    return res.status(400).json({ error: 'Phone and name are required' });
+  }
+
+  try {
+    await sendWhatsAppTemplate(phone, name);
+    res.json({ success: true, message: 'Welcome message sent' });
+  } catch (error) {
+    res.status(500).json({ error: 'Failed to send welcome message' });
+  }
+});
+
+// Main message handler (works for both SMS and WhatsApp)
+async function handleIncomingMessage(req, res) {
+  const { From, Body, MessageSid } = req.body;
+  const rawPhone = From;
+  const userPhone = normalizePhoneNumber(rawPhone); // Store without 'whatsapp:' prefix
+  const userMessage = Body;
+  const isWhatsApp = rawPhone.includes('whatsapp:');
+
+  console.log(`${isWhatsApp ? 'WhatsApp' : 'SMS'} message from ${userPhone}: ${userMessage}`);
 
   try {
     // Get user document by phone number
@@ -85,7 +133,8 @@ app.post('/sms', async (req, res) => {
       direction: 'incoming',
       content: userMessage,
       timestamp: new Date(),
-      twilioMessageSid: MessageSid
+      twilioMessageSid: MessageSid,
+      channel: isWhatsApp ? 'whatsapp' : 'sms'
     });
 
     // Get conversation history (last 10 messages for context)
@@ -129,7 +178,8 @@ app.post('/sms', async (req, res) => {
       direction: 'outgoing',
       content: arloResponse,
       timestamp: new Date(),
-      model: 'gpt-4o-mini'
+      model: 'gpt-4o-mini',
+      channel: isWhatsApp ? 'whatsapp' : 'sms'
     });
 
     // Update user stats
@@ -150,10 +200,15 @@ app.post('/sms', async (req, res) => {
     twimlResponse.message('Sorry, I encountered an error. Please try again in a moment.');
     res.type('text/xml').send(twimlResponse.toString());
   }
-});
+}
+
+// Twilio webhook endpoints
+app.post('/sms', handleIncomingMessage); // For SMS
+app.post('/whatsapp', handleIncomingMessage); // For WhatsApp (same handler)
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Arlo backend running on port ${PORT}`);
-  console.log(`Webhook URL: https://your-app.up.railway.app/sms`);
+  console.log(`SMS Webhook: https://your-app.up.railway.app/sms`);
+  console.log(`WhatsApp Webhook: https://your-app.up.railway.app/whatsapp`);
 });
