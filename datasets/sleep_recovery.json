@@ -2,13 +2,61 @@
   {
     "topic": "Morning Sunlight",
     "source": "Huberman Lab Podcast – Sleep Toolkit (2023)",
-    "summary": "Viewing natural light within 30 minutes of waking strengthens circadian rhythm and improves sleep onset at night.",
-    "action": "Encourage users to get 10–20 minutes of outdoor sunlight early in the day."
+    "summary": "Viewing natural light within 30 minutes of waking synchronizes circadian rhythms, leading to earlier melatonin onset at night.",
+    "action": "Encourage 10–20 minutes of outdoor sunlight exposure early each day."
+  },
+  {
+    "topic": "Evening Light Management",
+    "source": "Huberman Lab Podcast – Sleep Toolkit (2023)",
+    "summary": "Bright artificial light between 10 p.m. and 4 a.m. suppresses melatonin and disrupts deep sleep.",
+    "action": "Reduce overhead lighting and use warm, dim lights or night-shift filters after sunset."
   },
   {
     "topic": "Sleep Consistency",
     "source": "Journal of Sleep Research (2020)",
-    "summary": "Going to bed and waking at consistent times enhances deep sleep quality and HRV.",
-    "action": "Remind users to maintain stable sleep and wake times, even on weekends."
+    "summary": "Regular bed and wake times improve REM stability and HRV.",
+    "action": "Encourage users to maintain consistent sleep schedules, even on weekends."
+  },
+  {
+    "topic": "Caffeine Cut-Off",
+    "source": "Sleep Medicine Reviews (2018)",
+    "summary": "Caffeine consumed within six hours of bedtime reduces total sleep time and quality.",
+    "action": "Recommend stopping caffeine intake by 2 p.m. for most users."
+  },
+  {
+    "topic": "Exercise Timing",
+    "source": "WHOOP Recovery Insights (2022)",
+    "summary": "Moderate exercise improves sleep depth, but intense late-night sessions can raise core temperature and delay sleep onset.",
+    "action": "Promote hard training earlier in the day and light mobility or stretching in the evening."
+  },
+  {
+    "topic": "Temperature and Sleep",
+    "source": "National Sleep Foundation (2021)",
+    "summary": "Cool environments (18–20 °C / 65–68 °F) promote deeper sleep and faster onset.",
+    "action": "Advise keeping bedrooms cool and ventilated."
+  },
+  {
+    "topic": "Alcohol and Recovery",
+    "source": "WHOOP Data Insights (2021)",
+    "summary": "Alcohol decreases HRV and increases nighttime heart rate, impairing recovery.",
+    "action": "Encourage avoiding alcohol at least 3 hours before sleep."
+  },
+  {
+    "topic": "Napping and Performance",
+    "source": "Sleep Health Journal (2019)",
+    "summary": "Short naps (10–20 minutes) boost alertness without affecting nighttime sleep; long naps may cause sleep inertia.",
+    "action": "Recommend short mid-day naps for recovery when nighttime sleep is limited."
+  },
+  {
+    "topic": "Magnesium and Relaxation",
+    "source": "Nutrients Journal (2020)",
+    "summary": "Magnesium supports GABAergic activity, promoting relaxation and deeper sleep.",
+    "action": "Suggest magnesium glycinate supplementation 1–2 hours before bed for those deficient."
+  },
+  {
+    "topic": "Mind Wandering Before Bed",
+    "source": "Cognitive Therapy and Research (2019)",
+    "summary": "Journaling or mindfulness before bed lowers cortisol and racing thoughts.",
+    "action": "Encourage evening reflection or gratitude journaling to reduce stress before sleep."
   }
 ]
