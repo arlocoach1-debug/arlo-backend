@@ -1,0 +1,176 @@
+[
+  {
+    "topic": "Zone 2 Cardio Training",
+    "source": "Journal of Applied Physiology (2020)",
+    "summary": "Zone 2 training (60-70% max heart rate, conversational pace) builds aerobic base by increasing mitochondrial density by 20-30%. Forms foundation for all endurance work. Should comprise 70-80% of total cardio volume for endurance athletes. Improves fat oxidation and metabolic efficiency.",
+    "action": "Calculate Zone 2: (220 - age) × 0.60-0.70. Maintain conversational pace - you should be able to speak in full sentences. Do 3-5 sessions per week, 45-90 min each. Build base before adding intensity."
+  },
+  {
+    "topic": "VO2 Max Training",
+    "source": "Sports Medicine - VO2 Max Review (2021)",
+    "summary": "VO2 max (maximal oxygen uptake) is the ceiling for aerobic performance. Improves 10-20% with specific training. Most effective protocol: 4-8 intervals at 90-95% max heart rate for 3-5 minutes with equal rest. Limit to 1-2 sessions per week due to high fatigue cost.",
+    "action": "After building aerobic base, add 1× weekly VO2 max session: 4-6 intervals at near-maximal effort (3-5 min work, 3-5 min rest). Monitor heart rate recovery. Requires 48-72 hours recovery after."
+  },
+  {
+    "topic": "Lactate Threshold Training",
+    "source": "European Journal of Applied Physiology (2020)",
+    "summary": "Lactate threshold (the intensity where lactate accumulation exceeds clearance) is the best predictor of endurance performance. Training at or just below threshold (80-85% max HR) for 20-40 minutes improves threshold by 5-15%. More sustainable than VO2 max work.",
+    "action": "Find threshold pace: can maintain for 45-60 minutes at 'comfortably hard' effort. Train at this pace 1-2× per week for 20-40 continuous minutes or as intervals (3-4 × 8-10 min). Key session for race pace improvement."
+  },
+  {
+    "topic": "Polarized Training",
+    "source": "Frontiers in Physiology - Training Distribution (2019)",
+    "summary": "Polarized training (80% easy, 20% hard, minimal moderate) produces better results than threshold-focused training for endurance athletes. Elite athletes naturally gravitate toward this distribution. Avoids 'middle zone' training that's too hard to recover from but too easy to create adaptation.",
+    "action": "Structure training: 80% Zone 1-2 (easy, conversational), less than 5% Zone 3 (moderate/tempo), 15-20% Zone 4-5 (hard intervals). Track intensity distribution monthly. Most athletes do too much moderate intensity."
+  },
+  {
+    "topic": "Strength Training Periodization",
+    "source": "Journal of Strength and Conditioning Research (2020)",
+    "summary": "Linear periodization (progress from high volume/low intensity to low volume/high intensity over 8-16 weeks) increases strength 15-25%. Phases: anatomical adaptation → hypertrophy → strength → power. Each phase builds on previous. Rushing phases or skipping foundations reduces gains.",
+    "action": "Plan 12-16 week cycles: Weeks 1-4 (15-20 reps, technique), Weeks 5-8 (8-12 reps, muscle building), Weeks 9-12 (3-6 reps, max strength), Weeks 13-16 (1-5 reps, power). Progress systematically."
+  },
+  {
+    "topic": "Hypertrophy Training",
+    "source": "Sports Medicine - Muscle Growth Review (2021)",
+    "summary": "Muscle hypertrophy maximized at 6-12 reps per set (60-80% 1RM) with 3-6 sets per muscle group. Total weekly volume of 10-20 sets per muscle group optimal. Time under tension (30-60 sec per set) and mechanical tension are primary drivers. Requires caloric surplus and 1.6-2.2g protein per kg bodyweight.",
+    "action": "For muscle growth: 3-5 exercises per muscle group, 3-4 sets of 8-12 reps. Tempo: 2-3 sec down, 1 sec up. Train each muscle 2× per week. Progressive overload: add reps/weight weekly. Eat in slight surplus."
+  },
+  {
+    "topic": "Strength Training (Max Strength)",
+    "source": "Strength and Conditioning Journal (2020)",
+    "summary": "Maximal strength developed with 1-5 reps at 85-95% 1RM. Requires 3-5 min rest between sets for full ATP-CP system recovery. Neural adaptations (motor unit recruitment, firing rate) are primary mechanism, not muscle size. Foundation for power development.",
+    "action": "Strength phase: compound lifts (squat, deadlift, bench, overhead press), 3-6 sets of 1-5 reps at 85-95% 1RM. Rest 3-5 min between sets. 2-3× per week. Focus on bar speed and technique - avoid grinding reps."
+  },
+  {
+    "topic": "Power Development",
+    "source": "Journal of Sports Sciences - Power Training (2021)",
+    "summary": "Power (force × velocity) requires lifting moderate loads (30-60% 1RM) with maximal intent. Olympic lifts, plyometrics, and medicine ball throws most effective. Power peaks 3-5 min post-activation (post-activation potentiation). Best trained after max strength phase.",
+    "action": "Power exercises: Olympic lift variations, box jumps, medicine ball throws. 3-6 sets of 1-5 reps at 30-60% max with explosive intent. Full recovery between sets (2-4 min). Train 2× per week after building strength base."
+  },
+  {
+    "topic": "Concurrent Training",
+    "source": "Sports Medicine - Interference Effect (2020)",
+    "summary": "Training endurance and strength simultaneously creates 'interference effect' - endurance work can blunt strength/hypertrophy gains by 10-30% if programmed poorly. Separation by 6+ hours or training different qualities on different days minimizes interference. Strength before cardio if same session.",
+    "action": "For hybrid training: Separate strength and endurance by 6+ hours ideally, or do strength first if same session. Prioritize your primary goal (if strength is priority, do 3-4 strength days, 2-3 cardio days). Allow 24-48h between hard sessions of same type."
+  },
+  {
+    "topic": "Progressive Overload",
+    "source": "Sports Medicine - Training Adaptations (2019)",
+    "summary": "Progressive overload (gradually increasing training stress) is essential for continued adaptation. Can manipulate volume (sets/reps), intensity (weight/%1RM), frequency (sessions per week), or density (reducing rest periods). Increase one variable at a time by 2-5% per week.",
+    "action": "Track weekly training load. Progress via: adding 1-2 reps per set, adding 2.5-5 lbs to bar, adding 1 set per exercise, or reducing rest 15-30 sec. Change only one variable per week. If stalled 2+ weeks, deload."
+  },
+  {
+    "topic": "Tapering for Performance",
+    "source": "Medicine & Science in Sports & Exercise (2020)",
+    "summary": "Tapering (reducing training volume by 40-60% for 1-3 weeks before competition) improves performance by 2-8%. Maintain intensity but reduce volume. Taper length depends on event: 1 week for 5K, 2-3 weeks for marathon. Most athletes under-taper and arrive fatigued.",
+    "action": "Starting 7-21 days before race: Maintain workout intensity but reduce volume by 40-60%. Keep some high-intensity work to preserve sharpness. Last hard workout should be 5-7 days pre-race. Trust the taper - don't panic about 'losing fitness.'"
+  },
+  {
+    "topic": "Detraining & Time Off",
+    "source": "Sports Medicine - Detraining Effects (2021)",
+    "summary": "Significant performance losses occur after 2-3 weeks of inactivity. VO2 max drops 4-14% in first 2 weeks. Strength declines slower (5-10% over 3-4 weeks). Muscle memory allows faster return to previous fitness. Complete rest necessary occasionally but active recovery better for most breaks.",
+    "action": "Planned breaks: 1-2 weeks of complete rest or very light activity 1-2× per year. Unplanned breaks: maintain some activity if possible. Returning from 2+ week break: start at 50-60% previous volume, build up over 2-3 weeks."
+  },
+  {
+    "topic": "Tempo Training",
+    "source": "Journal of Strength and Conditioning Research (2019)",
+    "summary": "Tempo prescriptions control time under tension (TUT). Format: eccentric-pause-concentric-pause (e.g., 3-0-1-0 = 3 sec down, no pause, 1 sec up, no pause). Slower tempos (4-6 sec eccentric) increase hypertrophy stimulus. Faster tempos develop power. Manipulating tempo alters training effect.",
+    "action": "Hypertrophy: use 3-1-1-0 or 4-0-1-0 tempo (slower eccentric). Strength: 2-0-X-0 (explosive concentric). Control descent always - never drop weight. Use tempo to increase difficulty without adding load."
+  },
+  {
+    "topic": "Rest Periods Between Sets",
+    "source": "Sports Medicine - Rest Interval Review (2020)",
+    "summary": "Rest periods determine training adaptation. Strength/power: 3-5 min (full ATP-CP recovery). Hypertrophy: 1-3 min (metabolic stress + mechanical tension). Muscular endurance: 30-60 sec (lactate tolerance). Insufficient rest reduces power output and training quality.",
+    "action": "Match rest to goal: 3-5 min for heavy strength work (1-5 reps), 2-3 min for hypertrophy (6-12 reps), 1-2 min for endurance (15+ reps). Use timer - don't guess. Adequate rest = better training quality."
+  },
+  {
+    "topic": "Training Frequency",
+    "source": "Journal of Sports Sciences - Frequency Study (2021)",
+    "summary": "Training each muscle group 2-3× per week produces better results than 1× per week for both strength and hypertrophy. Total weekly volume matters more than single session volume. Distribute volume across multiple sessions for better recovery and protein synthesis spikes.",
+    "action": "Train major muscle groups 2-3× per week with 48-72 hours between sessions. Example: Upper Monday/Thursday, Lower Tuesday/Friday. Distribute 10-20 weekly sets per muscle across these sessions. More frequency = more growth signals."
+  },
+  {
+    "topic": "Repetition Ranges & Goals",
+    "source": "Strength and Conditioning Journal (2020)",
+    "summary": "Rep ranges target different adaptations: 1-5 reps (strength/neural), 6-12 reps (hypertrophy), 15+ reps (endurance). All ranges build some muscle but emphasis differs. Periodizing rep ranges produces best results - don't stay in one range year-round.",
+    "action": "Beginners: 8-12 reps for all exercises. Intermediate: Periodize - 4 weeks each of 12-15 reps, 8-12 reps, 4-6 reps. Advanced: Wave loading or daily undulating periodization. Match reps to current training goal."
+  },
+  {
+    "topic": "Exercise Selection",
+    "source": "Journal of Strength and Conditioning Research (2021)",
+    "summary": "Compound movements (squat, deadlift, bench, rows, overhead press) provide most bang-for-buck - multiple joints, highest loads, greatest hormonal response. Isolation exercises fine-tune weak points. Beginners should focus 80% on compounds. Advanced athletes can use 60-70% compounds, 30-40% isolation.",
+    "action": "Build program around 4-6 compound movements. Add 2-4 isolation exercises for weak points or physique goals. Prioritize compound lifts early in session when fresh. Learn proper technique before adding significant load."
+  },
+  {
+    "topic": "Training Volume Landmarks",
+    "source": "Sports Medicine - Volume Review (2020)",
+    "summary": "Minimum Effective Volume (MEV): ~4 sets per muscle per week maintains. Minimum Adaptive Volume (MAV): 10-12 sets per week for growth. Maximum Recoverable Volume (MRV): 20-25+ sets per week before recovery fails. Optimal volume is individual - start moderate and adjust based on progress.",
+    "action": "Start with 10-15 sets per muscle group per week. If progress stalls, add 2-3 sets per week. If recovery suffers (persistent soreness, fatigue, sleep issues), reduce volume by 20-30%. Find your sweet spot through experimentation."
+  },
+  {
+    "topic": "Eccentric Training",
+    "source": "European Journal of Applied Physiology (2021)",
+    "summary": "Eccentric (lowering) phase creates most muscle damage and growth stimulus. Muscles produce 20-40% more force eccentrically than concentrically. Eccentric-focused training (slow negatives, eccentric-overload methods) increases hypertrophy 10-15% but causes more soreness. Use strategically.",
+    "action": "Emphasize eccentric phase: 3-4 sec lowering, 1-2 sec lifting. Can add eccentric-only sets (partner-assisted or weight releasers) for advanced variation. Causes significant soreness - limit to 1-2 exercises per session, use during hypertrophy phases."
+  },
+  {
+    "topic": "Isometric Training",
+    "source": "Journal of Strength and Conditioning Research (2020)",
+    "summary": "Isometric holds (static muscle contraction) build strength at specific joint angles ±15 degrees. Useful for overcoming sticking points, injury rehabilitation, and building tendon strength. Less muscle growth than dynamic training but valuable for specific weaknesses.",
+    "action": "Add isometric holds for weak points: pause squats at parallel, dead-hang pull-up holds, mid-range bench press pauses. Hold 3-6 sec for strength, 20-40 sec for endurance. Use as accessory work, not primary training method."
+  },
+  {
+    "topic": "Plyometric Training",
+    "source": "Sports Medicine - Plyometrics Review (2021)",
+    "summary": "Plyometrics (jump training) develop reactive strength and elastic recoil - force production in under 0.25 seconds. Improves running economy, change of direction, and explosive power. High impact requires proper progression. Landing mechanics are critical for injury prevention.",
+    "action": "Start with low-intensity: box jumps (step down), broad jumps, squat jumps. Progress to moderate: depth jumps, hurdle hops, bounding. Volume: 40-100 foot contacts per session, 2-3× per week. Land softly, emphasize quality over quantity. Build strength base first."
+  },
+  {
+    "topic": "Mobility vs Flexibility Training",
+    "source": "Journal of Sports Sciences (2020)",
+    "summary": "Flexibility (passive range of motion) differs from mobility (active control through range). Mobility training (controlled articular rotations, active stretching) more functional for athletes than static flexibility. Both important but mobility should be prioritized for performance.",
+    "action": "Daily mobility routine: 5-10 min of joint circles (ankles, hips, shoulders, spine). Pre-workout: dynamic mobility drills. Post-workout: static stretching (30-60 sec holds). Address specific limitations with targeted mobility work."
+  },
+  {
+    "topic": "Unilateral vs Bilateral Training",
+    "source": "Strength and Conditioning Journal (2021)",
+    "summary": "Unilateral training (single-leg/arm exercises) improves balance, addresses imbalances, and builds stability. Bilateral training (both limbs) allows heavier loads. Optimal programs include both: 60-70% bilateral for strength, 30-40% unilateral for balance and injury prevention.",
+    "action": "Include unilateral work: Bulgarian split squats, single-leg RDLs, single-arm rows, lunges. Expose strength differences between limbs. Start with weaker side, match reps with stronger side. Reduces injury risk and improves sports performance."
+  },
+  {
+    "topic": "Rate of Perceived Exertion (RPE)",
+    "source": "Sports Medicine - RPE Review (2020)",
+    "summary": "RPE scale (1-10, where 10 = maximal effort) allows autoregulation without precise load calculations. RPE 7-8 (2-3 reps in reserve) optimal for most training. More repeatable than percentage-based training for intermediate athletes. Accounts for daily readiness variations.",
+    "action": "Use RPE scale: 6-7 (moderate, 3-4 reps left), 8 (hard, 2 reps left), 9 (very hard, 1 rep left), 10 (maximal). Target RPE 7-8 for most sets. Adjust load based on RPE, not pre-planned percentages. Allows intelligent autoregulation."
+  },
+  {
+    "topic": "Supersets & Circuit Training",
+    "source": "Journal of Strength and Conditioning Research (2019)",
+    "summary": "Supersets (2 exercises back-to-back) reduce workout time by 30-40% while maintaining similar strength/hypertrophy gains. Most effective pairing: antagonist muscles (push/pull) or upper/lower split. Circuit training (3+ exercises) excellent for work capacity but less optimal for max strength.",
+    "action": "Time-efficient training: pair opposing movements (bench press + rows, squats + nordic curls). Minimal rest between exercises, 2-3 min rest between supersets. Maintains training quality while saving time. Use for hypertrophy/conditioning, not max strength phases."
+  },
+  {
+    "topic": "Cluster Sets",
+    "source": "Journal of Strength and Conditioning Research (2020)",
+    "summary": "Cluster sets (short intra-set rest periods) allow higher quality reps at heavier loads. Example: 5 reps with 15-30 sec rest between each rep instead of continuous 5 reps. Maintains bar velocity and power output. Most effective for strength and power development.",
+    "action": "Strength phase: Instead of straight 5 reps, do 5 singles with 20-30 sec rest. Maintains rep quality and bar speed. Use for main compound lifts. Total rest time similar to traditional sets but higher quality work."
+  },
+  {
+    "topic": "Pre-Exhaustion vs Post-Exhaustion",
+    "source": "European Journal of Sport Science (2021)",
+    "summary": "Pre-exhaustion (isolation before compound) increases target muscle fatigue but reduces total load lifted. Post-exhaustion (compound then isolation) allows heavier loads while still fatiguing target muscle. Post-exhaustion generally superior for strength and hypertrophy.",
+    "action": "For muscle growth: Do compound lift first (bench press), then isolation (chest fly) to fully exhaust target muscle. For weak point emphasis: Pre-exhaust occasionally (leg extensions before squats for quad focus). Post-exhaustion is standard protocol."
+  },
+  {
+    "topic": "Overload Methods",
+    "source": "Strength and Conditioning Journal (2020)",
+    "summary": "Advanced overload techniques: drop sets (reduce weight mid-set), rest-pause (micro-rests within set), forced reps (partner assistance), eccentric-only (lifting help, slow lower). Highly fatiguing - use sparingly (1-2 exercises per session) and during hypertrophy phases only.",
+    "action": "Advanced lifters only: Use intensity techniques on final set of 1-2 exercises per workout. Example: drop set on last set of curls (10 reps, drop 20%, 10 more reps). Don't overuse - increases fatigue cost significantly. Stick to basics most of the time."
+  },
+  {
+    "topic": "Movement Patterns & Programming",
+    "source": "Journal of Strength and Conditioning Research (2021)",
+    "summary": "Balanced programs include 7 fundamental movement patterns: squat, hinge, horizontal push/pull, vertical push/pull, and carry. Training all patterns prevents imbalances and injury. Most athletes over-emphasize push movements relative to pull (2:1 ratio needed for shoulder health).",
+    "action": "Weekly program should include: squats (front/back), hinges (deadlift/RDL), horizontal push (bench/push-up), horizontal pull (rows), vertical push (overhead press), vertical pull (pull-ups/lat pulldown), loaded carries. Pull 2× for every push movement."
+  }
+]
