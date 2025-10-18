@@ -1,0 +1,152 @@
+[
+  {
+    "topic": "Active Recovery Principles",
+    "source": "Journal of Sports Sciences (2018)",
+    "summary": "Active recovery (low-intensity movement at 30-40% max effort) increases blood flow and clears metabolic waste 25% faster than passive rest. Walking, easy cycling, or swimming for 20-30 minutes enhances recovery without adding training stress.",
+    "action": "Use active recovery days between hard sessions. Keep heart rate under 120 bpm. Focus on 20-30 minutes of easy movement, not sitting completely still."
+  },
+  {
+    "topic": "Foam Rolling & Myofascial Release",
+    "source": "Sports Medicine - Systematic Review (2019)",
+    "summary": "Foam rolling reduces muscle soreness by 15-20% and improves range of motion by 10-15% when done for 30-90 seconds per muscle group. Most effective when performed immediately post-workout or before bed. Does not impair performance when done before training.",
+    "action": "Spend 30-60 seconds per major muscle group. Roll slowly over tender spots. Best timing: post-workout for soreness, pre-bed for recovery, or pre-workout for mobility."
+  },
+  {
+    "topic": "Massage Therapy for Athletes",
+    "source": "British Journal of Sports Medicine (2020)",
+    "summary": "Deep tissue massage reduces muscle tension and improves recovery markers by 30% when done 48-72 hours post-hard training. More frequent than once per week shows diminishing returns. Sports massage differs from relaxation massage in pressure and technique.",
+    "action": "Schedule massage 2-3 days after hardest training sessions, not immediately after. Communicate soreness areas to therapist. Once per week maximum for performance benefits."
+  },
+  {
+    "topic": "Contrast Therapy (Hot/Cold)",
+    "source": "European Journal of Applied Physiology (2021)",
+    "summary": "Alternating hot (38-42°C) and cold (10-15°C) water immersion in 3-4 cycles reduces inflammation and perceived soreness by 20-25%. Protocol: 3 minutes hot, 1 minute cold, repeat 3-4 times. Most effective within 2 hours post-exercise.",
+    "action": "Use after particularly hard sessions: 3 min hot shower/bath, 1 min cold, repeat 3-4 cycles. End on cold. Timing matters - do within 2 hours of training."
+  },
+  {
+    "topic": "Ice Baths & Cold Water Immersion",
+    "source": "Sports Medicine - Cold Therapy Meta-Analysis (2020)",
+    "summary": "Cold water immersion (10-15°C for 10-15 minutes) reduces muscle soreness by 20% and speeds recovery between competitions. However, regular use may blunt strength and hypertrophy adaptations by 10-15% in training phases. Best for competition periods, not building phases.",
+    "action": "Use ice baths during competition season or between multiple events. Avoid during strength/muscle building phases. Protocol: 10-15 min at 50-59°F (10-15°C)."
+  },
+  {
+    "topic": "Compression Garments",
+    "source": "Journal of Strength and Conditioning Research (2019)",
+    "summary": "Compression garments (15-25 mmHg pressure) worn for 12-24 hours post-exercise reduce muscle swelling and perceived soreness by 15-20%. No performance benefit during exercise, but aids recovery after. Most effective for lower body (legs).",
+    "action": "Wear compression tights or socks for 12-24 hours after hard leg sessions. Ensure proper fit (15-25 mmHg pressure). Don't wear during training unless for injury management."
+  },
+  {
+    "topic": "Deload Weeks",
+    "source": "Strength and Conditioning Journal (2020)",
+    "summary": "Planned deload weeks (40-60% normal training volume) every 3-6 weeks prevent overtraining and allow supercompensation. Athletes often see performance improvements after deloads. Frequency depends on training age - beginners need less frequent deloads than advanced athletes.",
+    "action": "Schedule deload every 4 weeks if training hard. Reduce volume by 40-50%, keep intensity moderate. Use for technique work and addressing minor aches. Don't skip - they're part of the training plan."
+  },
+  {
+    "topic": "Heart Rate Variability (HRV) Tracking",
+    "source": "Frontiers in Physiology - HRV Review (2021)",
+    "summary": "HRV measures nervous system recovery. Higher HRV indicates better recovery readiness. Measure first thing upon waking. 10-20% drop from baseline suggests incomplete recovery. Chronic low HRV indicates overtraining risk. More reliable than resting heart rate alone.",
+    "action": "Measure HRV every morning (use Whoop, Oura, or HRV4Training app). Track weekly average, not daily swings. If 10-20% below baseline, reduce training intensity or add rest day."
+  },
+  {
+    "topic": "Resting Heart Rate Monitoring",
+    "source": "Journal of Sports Medicine (2019)",
+    "summary": "Elevated resting heart rate (5-10 bpm above baseline) upon waking indicates incomplete recovery or overtraining. More reliable when measured consistently at same time. Can signal illness before symptoms appear. Takes 7-10 days of measurement to establish baseline.",
+    "action": "Measure heart rate immediately upon waking, before getting out of bed. Track for 2 weeks to establish baseline. If 5+ bpm elevated, consider rest or easy day."
+  },
+  {
+    "topic": "Overtraining vs Overreaching",
+    "source": "Sports Medicine - Overtraining Syndrome (2020)",
+    "summary": "Functional overreaching (planned short-term overload for 1-3 weeks) leads to performance gains after recovery. Non-functional overreaching (excessive load for 3+ weeks) causes performance decline. Overtraining syndrome (months of accumulated stress) requires weeks to months of rest.",
+    "action": "Watch for warning signs: elevated resting HR, persistent fatigue, mood changes, declining performance, poor sleep. Functional overreaching resolves in 3-7 days. If symptoms persist 2+ weeks, reduce training immediately."
+  },
+  {
+    "topic": "Rest Day Strategies",
+    "source": "International Journal of Sports Physiology (2021)",
+    "summary": "Complete rest days are essential for adaptation - muscles grow during rest, not training. At least 1-2 full rest days per week prevent burnout. Rest days should include light movement (walking) but no structured training. Mental recovery is as important as physical.",
+    "action": "Schedule 1-2 complete rest days per week. Allow light walking or stretching, but no structured workouts. Focus on sleep, nutrition, and stress management. Don't feel guilty - rest is productive."
+  },
+  {
+    "topic": "Sleep Debt & Recovery Deficit",
+    "source": "Sleep Health - Recovery Study (2020)",
+    "summary": "Each hour of sleep debt requires 2-3 hours of extra sleep to fully recover. Chronic sleep restriction (even 1 hour per night) accumulates as recovery deficit, impairing performance by 10-20% within 2 weeks. Weekend catch-up sleep only partially resolves deficit.",
+    "action": "If carrying sleep debt, add 1 extra hour per night for 3-4 consecutive nights. Prioritize sleep over training when recovering from hard blocks. Can't out-train poor sleep."
+  },
+  {
+    "topic": "Nutrition Timing for Recovery",
+    "source": "Journal of the International Society of Sports Nutrition (2021)",
+    "summary": "Post-workout nutrition window is 0-2 hours for optimal recovery. Protein (20-40g) and carbs (0.5-1g per kg bodyweight) consumed within 30-90 minutes speeds glycogen replenishment and muscle protein synthesis by 25-30%. Longer delays reduce these benefits.",
+    "action": "Consume protein + carbs within 60 minutes post-workout. Aim for 3:1 or 4:1 carb-to-protein ratio. Whole food or shakes both work. Prioritize this meal especially after hard sessions."
+  },
+  {
+    "topic": "Hydration & Recovery",
+    "source": "Sports Medicine - Hydration Review (2019)",
+    "summary": "Dehydration of just 2% bodyweight impairs recovery by reducing blood flow to muscles and delaying waste removal. Post-exercise, drink 150% of fluid lost (if lost 1L, drink 1.5L over next 2-4 hours). Electrolytes (sodium) improve rehydration by 20-25% vs water alone.",
+    "action": "Weigh before/after training to estimate fluid loss. Replace 150% over 2-4 hours post-workout. Add electrolytes (sodium) if sweat loss is heavy. Urine should be pale yellow within 2-3 hours."
+  },
+  {
+    "topic": "Protein Intake for Recovery",
+    "source": "American Journal of Clinical Nutrition (2020)",
+    "summary": "Daily protein intake of 1.6-2.2g per kg bodyweight optimizes recovery and muscle protein synthesis in athletes. Distribute evenly across 4-5 meals (20-40g per meal) for best results. Timing matters less than total daily intake, but post-workout dose is most critical.",
+    "action": "Calculate protein needs: bodyweight (kg) × 1.6-2.2g. Divide across 4-5 meals. Prioritize 20-40g post-workout. Track for 3-5 days to ensure you're hitting target consistently."
+  },
+  {
+    "topic": "Carbohydrate Replenishment",
+    "source": "Sports Medicine - Glycogen Recovery (2021)",
+    "summary": "Muscle glycogen fully depletes after 60-90 minutes of hard training. Complete replenishment takes 24-48 hours depending on carb intake. Consuming 1-1.2g carbs per kg bodyweight within 2 hours post-workout speeds recovery by 30-40%. Important for athletes training daily.",
+    "action": "After hard sessions, eat carbs within 2 hours: 1-1.2g per kg bodyweight. Example: 70kg athlete needs 70-85g carbs post-workout (large bowl of rice/pasta or 2 bananas + protein shake)."
+  },
+  {
+    "topic": "Anti-Inflammatory Foods",
+    "source": "Nutrients - Sports Nutrition Review (2020)",
+    "summary": "Omega-3 fatty acids, tart cherry juice, and turmeric show evidence of reducing exercise-induced inflammation by 15-25%. However, some inflammation is necessary for adaptation. Chronic anti-inflammatory use (NSAIDs or excessive supplementation) may impair training adaptations.",
+    "action": "Include fatty fish (salmon, mackerel) 2-3× per week or omega-3 supplement (2-3g EPA/DHA daily). Tart cherry juice (8-12 oz) post-hard sessions. Avoid chronic NSAID use unless medically necessary."
+  },
+  {
+    "topic": "Sauna for Recovery",
+    "source": "Journal of Science and Medicine in Sport (2021)",
+    "summary": "Post-exercise sauna (20-30 min at 80-90°C) increases growth hormone release by 140%, improves endurance by 5-10%, and speeds recovery. Heat stress activates heat shock proteins that repair damaged tissue. Best used 2-3× per week, not daily. Hydrate aggressively.",
+    "action": "Use sauna 20-30 minutes, 2-3× per week after training. Temperature: 80-90°C (176-194°F). Drink 500-750ml water before and after. Avoid on hard training days if it impairs next session."
+  },
+  {
+    "topic": "Stretching & Flexibility Work",
+    "source": "Sports Medicine - Stretching Review (2019)",
+    "summary": "Static stretching post-workout reduces muscle stiffness and improves range of motion by 10-15%. Hold stretches 30-60 seconds per muscle group. Pre-workout static stretching may reduce power output by 5-8%. Dynamic stretching is better for warm-ups. Flexibility work aids recovery but isn't essential.",
+    "action": "Static stretch post-workout: 30-60 sec per major muscle group. Focus on areas used most. Use dynamic stretching pre-workout instead. Add 10-15 min stretching on rest days if particularly tight."
+  },
+  {
+    "topic": "Mental Recovery & Stress Management",
+    "source": "Psychology of Sport and Exercise (2020)",
+    "summary": "Mental fatigue impairs physical performance by 10-15%. Chronic stress elevates cortisol, hindering recovery and adaptation. Active recovery includes mental rest - avoid screens 1-2 hours before bed, practice mindfulness, take breaks from training content. Mental recovery is as critical as physical.",
+    "action": "Schedule mental rest days: no training content, no obsessing over metrics. Practice 10-15 min meditation or breathing exercises daily. Disconnect from screens 90 min before bed. Recovery is holistic."
+  },
+  {
+    "topic": "Training Load Management",
+    "source": "British Journal of Sports Medicine - Load Monitoring (2021)",
+    "summary": "Acute:Chronic Workload Ratio (ACWR) predicts injury risk. ACWR above 1.5 (training load 50% higher than 4-week average) increases injury risk by 200-300%. Rapid load spikes, not total volume, cause most injuries. Gradual progressions (10% per week) are safest.",
+    "action": "Track weekly training volume (time or distance). Keep week-to-week increases under 10-15%. If taking time off, rebuild volume slowly - don't return to previous levels immediately. Use 3:1 or 4:1 hard:easy week ratios."
+  },
+  {
+    "topic": "Periodization & Recovery Cycles",
+    "source": "Sports Medicine - Periodization Review (2020)",
+    "summary": "Periodization (planned variation in training load) optimizes adaptation and recovery. Mesocycles (3-6 weeks) should include build weeks followed by deload. Macrocycles (3-12 months) include base, build, peak, and recovery phases. Athletes who periodize see 15-20% better performance gains.",
+    "action": "Plan training in 4-week blocks: 3 weeks progressive overload, 1 week deload. Don't train hard indefinitely. Build base → increase intensity → peak for event → recover. Repeat cycle."
+  },
+  {
+    "topic": "Adaptogenic Supplements",
+    "source": "Nutrients - Adaptogen Review (2021)",
+    "summary": "Ashwagandha (300-600mg daily) reduces cortisol by 25-30% and may improve recovery from training stress. Rhodiola rosea (200-400mg) reduces perceived fatigue by 20%. Evidence is moderate but promising. Not magic bullets - sleep, nutrition, and training management matter more.",
+    "action": "Consider ashwagandha (300mg 2× daily) during high-stress training blocks. Rhodiola (200mg) before hard sessions. Cycle on/off (8 weeks on, 2 weeks off). Not essential but may help recovery in demanding phases."
+  },
+  {
+    "topic": "Electrolyte Balance",
+    "source": "Journal of the International Society of Sports Nutrition (2020)",
+    "summary": "Sodium, potassium, and magnesium losses through sweat impair recovery if not replaced. Heavy sweaters lose 1-2g sodium per hour. Cramps, fatigue, and poor performance signal electrolyte imbalance. Plain water dilutes electrolytes further. Sodium is most critical to replace.",
+    "action": "For sessions over 60 min or heavy sweating: consume 300-600mg sodium per hour (sports drink or salt tablets). Post-workout: eat salty foods or add 1/4 tsp salt to water. Track sweat rate (weigh before/after training)."
+  },
+  {
+    "topic": "Recovery-Based Training Adjustments",
+    "source": "International Journal of Sports Physiology (2021)",
+    "summary": "Training should be adjusted based on recovery markers, not just calendar. Athletes who modify intensity based on HRV, sleep quality, or soreness see 10-15% better performance than rigid plans. Autoregulation (adjusting based on daily readiness) prevents overtraining and optimizes adaptation.",
+    "action": "Use subjective (soreness, mood, sleep quality) and objective (HRV, resting HR) markers daily. If 2+ markers are off, reduce intensity or volume by 20-30%. One bad day is normal; multiple days signal need for rest."
+  }
+]
