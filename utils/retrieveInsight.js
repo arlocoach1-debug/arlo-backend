@@ -5,6 +5,22 @@ const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
 });
 
+// List of all embedding files
+const embeddingFiles = [
+  './datasets/sleep_recovery_embeddings.json',
+  './datasets/recovery_regeneration_embeddings.json',
+  './datasets/training_methods_embeddings.json',
+  './datasets/nutrition_fueling_embeddings.json',
+  './datasets/stress_mental_performance_embeddings.json',
+  './datasets/breathing_techniques_embeddings.json',
+  './datasets/injury_prevention_mobility_embeddings.json',
+  './datasets/mindset_motivation_embeddings.json',
+  './datasets/performance_optimization_embeddings.json',
+  './datasets/productivity_time_management_embeddings.json',
+  './datasets/race_competition_prep_embeddings.json',
+  './datasets/hyrox_hybrid_training_embeddings.json'
+];
+
 // Calculate cosine similarity between two vectors
 function cosineSimilarity(vecA, vecB) {
   const dotProduct = vecA.reduce((sum, a, i) => sum + a * vecB[i], 0);
@@ -16,15 +32,20 @@ function cosineSimilarity(vecA, vecB) {
 // Retrieve relevant insights based on user message
 async function retrieveInsight(userMessage) {
   try {
-    // Load embeddings from file
-    const embeddingsPath = './datasets/sleep_recovery_embeddings.json';
+    // Load all embeddings from all files
+    let allEmbeddings = [];
     
-    if (!fs.existsSync(embeddingsPath)) {
-      console.log('⚠️ Embeddings file not found. Using default response.');
+    for (const embeddingFile of embeddingFiles) {
+      if (fs.existsSync(embeddingFile)) {
+        const data = JSON.parse(fs.readFileSync(embeddingFile, 'utf8'));
+        allEmbeddings = allEmbeddings.concat(data);
+      }
+    }
+    
+    if (allEmbeddings.length === 0) {
+      console.log('⚠️ No embedding files found. Generate embeddings first.');
       return null;
     }
-
-    const embeddingsData = JSON.parse(fs.readFileSync(embeddingsPath, 'utf8'));
 
     // Generate embedding for user's message
     const response = await openai.embeddings.create({
@@ -34,11 +55,11 @@ async function retrieveInsight(userMessage) {
 
     const userEmbedding = response.data[0].embedding;
 
-    // Find most similar insight
+    // Find most similar insight across all knowledge bases
     let bestMatch = null;
     let highestScore = -1;
 
-    embeddingsData.forEach((item) => {
+    allEmbeddings.forEach((item) => {
       const similarity = cosineSimilarity(userEmbedding, item.vector);
       if (similarity > highestScore) {
         highestScore = similarity;
