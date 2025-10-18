@@ -164,6 +164,14 @@ async function handleIncomingMessage(req, res) {
     conversationHistory.reverse();
 
     // Build context about the user for better personalization
+    // Retrieve relevant knowledge insight
+const insight = await retrieveInsight(userMessage);
+
+// Add insight to context if found
+let knowledgeContext = '';
+if (insight) {
+  knowledgeContext = `\n\nRelevant research insight:\nTopic: ${insight.topic}\nSource: ${insight.source}\nSummary: ${insight.summary}\nAction: ${insight.action}`;
+}
 const userContext = `User: ${userData.name}, ${userData.age} years old, ${userData.gender}
 Goal: ${userData.mainGoal || 'Not specified'}
 Training: ${userData.trainingLevel || 'Unknown'} level, ${userData.trainingFrequency || 'Unknown'}, ${userData.trainingVolume || 'Unknown'} total
@@ -174,14 +182,6 @@ Nutrition: ${userData.nutritionApproach || 'Not specified'}
 Supplements: ${userData.supplements ? userData.supplements.join(', ') : 'None'}
 Wearable: ${userData.wearableDevice || 'None'}
 Training time: ${userData.trainingTime || 'Unknown'}${userData.injuryNotes ? `\nInjury notes: ${userData.injuryNotes}` : ''}${knowledgeContext}`;
-// Retrieve relevant knowledge insight
-    const insight = await retrieveInsight(userMessage);
-    
-    // Add insight to context if found
-    let knowledgeContext = '';
-    if (insight) {
-      knowledgeContext = `\n\nRelevant research insight:\nTopic: ${insight.topic}\nSource: ${insight.source}\nSummary: ${insight.summary}\nAction: ${insight.action}`;
-    }
     // Get AI response
     const completion = await openai.chat.completions.create({
       model: 'gpt-4o-mini',
