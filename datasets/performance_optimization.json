@@ -1,0 +1,92 @@
+[
+  {
+    "topic": "Circadian Rhythm & Performance Timing",
+    "source": "Current Biology - Circadian Performance (2021)",
+    "summary": "Physical performance peaks 4-6 hours after waking (typically 2-6pm for most people). Body temperature, reaction time, and power output follow circadian rhythms. Morning training requires longer warm-ups. Consistent training times entrain body to perform optimally at that time. Chronotype (morning vs evening person) affects optimal training time.",
+    "action": "Identify peak performance window: Track when you feel strongest (usually afternoon/early evening). Schedule hardest sessions during peak times when possible. If training early morning, add 10-15 min to warm-up. Consistency matters - train at same time daily when possible to optimize circadian adaptation."
+  },
+  {
+    "topic": "Cold Exposure & Adaptation",
+    "source": "European Journal of Applied Physiology (2020)",
+    "summary": "Regular cold exposure (cold showers, ice baths) increases brown fat, improves metabolic efficiency, boosts norepinephrine by 200-300%, and may enhance mental resilience. However, cold immediately post-strength training blunts hypertrophy adaptations by 10-15%. Best used for recovery between competitions or during endurance phases.",
+    "action": "Cold protocol: End showers with 30-90 sec cold water (uncomfortable but tolerable). Build to 2-3 min over weeks. Or: 10-15 min ice bath (50-59°F) post-endurance sessions. Avoid cold therapy within 4 hours of strength training if building muscle. Best for mental resilience and recovery during competition phases."
+  },
+  {
+    "topic": "Heat Adaptation Training",
+    "source": "Sports Medicine - Heat Acclimation (2021)",
+    "summary": "Heat acclimation (training in heat or sauna post-workout) increases blood plasma volume by 15-20%, improves thermoregulation, and enhances endurance by 5-7%. Requires 7-14 days of heat exposure. Benefits last 2-3 weeks after cessation. Particularly valuable before hot-weather competitions or for general performance gains.",
+    "action": "Heat acclimation protocol: 2-3 weeks before hot race, do easy runs in heat (midday, overdressed) or 20-30 min sauna post-workout. Start conservative (10 min), build to 30 min over 7-10 days. Hydrate aggressively. Or use year-round: sauna 3× weekly post-training for general performance boost."
+  },
+  {
+    "topic": "Altitude Training & Simulation",
+    "source": "High Altitude Medicine & Biology (2020)",
+    "summary": "'Live high, train low' approach produces 3-5% endurance improvements through increased red blood cell production. Natural altitude (8,000-10,000 feet) or altitude simulation tents/masks increase EPO production. Requires 3-4 weeks minimum for adaptation. Benefits diminish 2-3 weeks after returning to sea level.",
+    "action": "If training at altitude: Sleep at altitude (8,000+ feet), train at lower altitude when possible for quality. If using altitude tent/mask: Sleep 8-10 hours at simulated 8,000-10,000 feet for 3-4 weeks minimum. Expect initial fatigue - reduce training volume 10-20% first week. Best for endurance athletes preparing for sea-level competition."
+  },
+  {
+    "topic": "Ergogenic Aids & Legal Supplements",
+    "source": "Journal of the International Society of Sports Nutrition (2021)",
+    "summary": "Evidence-backed ergogenic aids: caffeine (3-6mg/kg), creatine (5g daily), beta-alanine (4-6g daily), sodium bicarbonate (0.3g/kg), beetroot juice (6-8mmol nitrate). Each improves specific performance aspects by 2-5%. Stacking multiple may provide additive benefits. Individual responses vary significantly.",
+    "action": "Performance stack (test in training first): Caffeine (pre-workout), creatine (daily), beta-alanine (daily for 4+ weeks before competition). Add beetroot juice for endurance events, sodium bicarbonate for high-intensity efforts lasting 1-10 min. Always test protocols in training - never experiment on race day. Individual response varies."
+  },
+  {
+    "topic": "Pre-Competition Taper",
+    "source": "Sports Medicine - Taper Review (2020)",
+    "summary": "Optimal taper: Reduce volume by 40-60%, maintain intensity, duration 1-3 weeks depending on event distance. Taper allows recovery from training fatigue while maintaining fitness. Most athletes under-taper and arrive at races fatigued. Psychological challenge - athletes feel they're losing fitness but performance actually peaks.",
+    "action": "Taper protocol: 7-21 days before race (longer for marathon, shorter for 5K), reduce weekly volume by 40-60%. Keep 1-2 high-intensity sessions but reduce total reps. Last hard workout 5-7 days before race. Increase sleep, maintain nutrition. Trust the process - feeling 'flat' during taper is normal, race day sharpness returns."
+  },
+  {
+    "topic": "Performance Peaking Strategies",
+    "source": "International Journal of Sports Physiology (2021)",
+    "summary": "Peaking for single event requires periodized plan: 8-12 week base building, 4-6 week specific preparation, 1-3 week taper. Can't maintain peak fitness year-round - peaks last 2-4 weeks. Multiple peaks per year require recovery valleys between. Elite athletes target 2-3 major peaks annually.",
+    "action": "Plan peak 12-16 weeks out: Weeks 1-8 base building (volume), weeks 9-12 specific intensity, weeks 13-15 taper, week 16 race. Allow 2-4 week recovery after peak before next build. Don't try to peak for every race - prioritize 2-3 key competitions per year. Training through lesser races while building fitness is common strategy."
+  },
+  {
+    "topic": "Pacing Strategy & Even Splits",
+    "source": "Sports Medicine - Pacing Review (2021)",
+    "summary": "Even pacing or slight negative splits (second half faster) produce best performance in events over 10 minutes. Positive splits (slowing down) lead to 5-10% performance decline. Starting too fast depletes glycogen, increases lactate, and causes premature fatigue. Disciplined pacing is primary separator between elite and amateur performance.",
+    "action": "Practice pacing discipline: In training, run negative splits (second half 5-10 sec/mile faster). Use GPS for feedback. In races: Start slightly conservative (5-10 sec/mile slower than goal), assess at halfway, increase effort if feeling strong. Most athletes go out 10-20 sec/mile too fast and pay dearly. Conservative start + strong finish > aggressive start + death march."
+  },
+  {
+    "topic": "Fueling for Peak Performance",
+    "source": "Journal of Sports Sciences (2020)",
+    "summary": "Day-before and morning-of nutrition significantly impact performance. Carb loading (8-10g/kg) 24-48 hours before increases glycogen stores 25-50%. Morning-of meal (3-4 hours pre-race) tops off liver glycogen. During events over 60 min, 30-90g carbs per hour prevents bonking. Practice all fueling in training.",
+    "action": "Race week nutrition: Normal eating until 48h before, then carb load (8-10g/kg for 24-48h). Race morning: familiar breakfast 3-4 hours before (oatmeal, toast, banana). 30-60 min before: gel if desired. During race: 30-60g carbs/hour (60-90g for events over 2.5 hours). Only use tested nutrition strategies."
+  },
+  {
+    "topic": "Race Week Training Adjustments",
+    "source": "International Journal of Sports Physiology (2020)",
+    "summary": "Race week should feel easier than normal training - cumulative fatigue dissipates, nervous system recovers, glycogen supercompensates. Key sessions: one short, sharp workout 5-7 days out to maintain feel. No new workouts, no testing fitness. Focus on sleep, nutrition, hydration, mental preparation. Trust training already completed.",
+    "action": "Race week schedule: Monday-Tuesday: easy 30-40 min + strides, Wednesday: short workout (4-6 × 1 min at race pace, full recovery), Thursday-Friday: easy 20-30 min or rest, Saturday: 10-15 min shakeout + strides (if race Sunday). Prioritize sleep, eat clean, stay off feet. No heroics - training is done."
+  },
+  {
+    "topic": "Mental Preparation & Visualization",
+    "source": "Psychology of Sport and Exercise (2021)",
+    "summary": "Mental rehearsal (visualizing race scenarios in detail) improves performance by 5-10% and reduces anxiety. Most effective when practiced daily during final 1-2 weeks. Visualize entire race: start, middle adversity, strong finish. Include sensory details (sounds, feelings) and problem-solving scenarios. Builds confidence and reduces surprises.",
+    "action": "Daily visualization (10-15 min) during taper: Close eyes, mentally rehearse race from start to finish. Include: standing at start line, first mile, hitting mile splits, managing discomfort at halfway, strong finishing kick. Visualize overcoming adversity (side stitch, competitors passing). Feel emotions of success. Makes race feel familiar on race day."
+  },
+  {
+    "topic": "Post-Competition Recovery",
+    "source": "Sports Medicine - Recovery Protocols (2020)",
+    "summary": "Recovery from hard efforts requires 1 day per mile raced (10K = 6-7 days, marathon = 26 days) before returning to normal training. Jumping back too quickly increases injury risk by 200-300%. Active recovery (easy movement) beats complete rest. Glycogen, muscle damage, and immune suppression all require time to normalize.",
+    "action": "Post-race recovery: Days 1-3 complete rest or easy walking. Days 4-7 light cross-training or easy jogs (20-30 min). Week 2 return to easy running, no intensity. Week 3-4 gradually reintroduce workouts. Use 1 day per mile raced as minimum. Longer races (marathon) require 3-4 weeks before resuming hard training."
+  },
+  {
+    "topic": "Racing in Heat & Humidity",
+    "source": "Medicine & Science in Sports & Exercise (2021)",
+    "summary": "Heat reduces performance by 3-10% depending on acclimatization. Humidity prevents evaporative cooling, worsening effects. Core temperature rises faster, heart rate increases 10-20 bpm at same pace. Dehydration accelerates. Unacclimated athletes should reduce goal pace by 15-30 sec/mile in heat. Pre-cooling and aggressive hydration help.",
+    "action": "Hot race strategies: 1) Reduce pace expectations (10-20 sec/mile slower if unacclimated), 2) Pre-cool (cold fluids, ice vest before start), 3) Start conservative, 4) Pour water on head/neck at aid stations, 5) Increase fueling/hydration (every aid station). Accept slower times in heat - effort matters more than pace."
+  },
+  {
+    "topic": "Maximizing Training Adaptations",
+    "source": "Sports Medicine - Training Adaptation (2020)",
+    "summary": "Adaptations occur during recovery, not during training. Training provides stimulus, recovery allows adaptation. Insufficient recovery prevents adaptation despite training stimulus. Sleep, nutrition, and stress management determine adaptation quality. Athletes who optimize recovery see 15-25% better adaptations from same training volume.",
+    "action": "Optimization checklist: 1) Sleep 8-9 hours during hard training, 2) Eat sufficient calories (don't chronically under-fuel), 3) Protein 1.6-2.2g/kg daily distributed across meals, 4) Manage life stress (training stress + life stress = total stress), 5) Schedule recovery weeks (3:1 or 4:1 ratio). Recovery is when you get stronger."
+  },
+  {
+    "topic": "Supercompensation & Timing",
+    "source": "European Journal of Sport Science (2020)",
+    "summary": "Supercompensation (fitness rebound above baseline after stress + recovery) typically peaks 7-14 days post-hard training block. Racing immediately after hard training = underperformance. Racing after proper taper = peak performance. Understanding supercompensation timing is key to peaking. Patience during taper allows supercompensation.",
+    "action": "Apply supercompensation: After 3-4 week hard training block, take 5-7 day recovery week. Fitness will feel 'flat' during recovery but supercompensation occurs days 7-14 after backing off. Plan competitions 10-14 days after last hard training week. This is the window of peak performance. Trust the biology - you get stronger during recovery, not training."
+  }
+]
