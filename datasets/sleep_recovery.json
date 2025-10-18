@@ -160,5 +160,89 @@
     "source": "Neuroscience & Biobehavioral Reviews (2020)",
     "summary": "Deep sleep decreases 2% per decade after age 30. Older adults experience earlier circadian phase (earlier bedtime/wake), lighter sleep, and more fragmentation. These changes are normal but can be partially mitigated.",
     "action": "Older adults should prioritize consistency, morning light exposure, and resistance training to preserve deep sleep. Accept 6-7 hours may be sufficient."
+  },
+  {
+    "topic": "Adenosine & Sleep Pressure",
+    "source": "Nature Neuroscience - Sleep Homeostasis (2021)",
+    "summary": "Adenosine accumulates in the brain during waking hours, creating sleep pressure. After 16 hours awake, adenosine levels trigger strong sleep drive. Caffeine blocks adenosine receptors, temporarily masking fatigue but not eliminating actual sleep debt.",
+    "action": "Understand that caffeine delays but doesn't eliminate sleep need. Stop caffeine 8-10 hours before bed to allow adenosine clearance. If using caffeine strategically, time it for when adenosine levels are highest (afternoon slump)."
+  },
+  {
+    "topic": "Sleep Inertia Management",
+    "source": "Sleep Medicine Reviews - Awakening Study (2020)",
+    "summary": "Sleep inertia (grogginess upon waking) lasts 15-60 minutes and is worse when waking from deep sleep. Immediate bright light exposure, cold water on face, and light movement can reduce inertia by 40%. Strategic alarm timing between sleep cycles minimizes this effect.",
+    "action": "Upon waking: open curtains immediately, splash cold water on face, do 2-3 minutes of light movement. Use sleep cycle calculators to time alarms for lighter sleep phases."
+  },
+  {
+    "topic": "Polyphasic vs Monophasic Sleep",
+    "source": "Journal of Sleep Research - Sleep Architecture Comparison (2019)",
+    "summary": "Polyphasic sleep (multiple sleep periods) reduces total deep and REM sleep compared to consolidated monophasic sleep. While some cultures practice biphasic sleep (siesta), research shows fragmented sleep impairs memory consolidation and recovery for athletes.",
+    "action": "Prioritize 7-9 hours of consolidated nighttime sleep. If napping, keep it to one 20-30 minute power nap to avoid fragmenting core sleep architecture."
+  },
+  {
+    "topic": "Sleep Extension for Athletes",
+    "source": "Sleep Journal - Stanford Basketball Study (2011)",
+    "summary": "Stanford study showed basketball players sleeping 10 hours (vs 6-9 hours) improved sprint times by 5%, free throw accuracy by 9%, and reaction time by 15%. Sleep extension during training blocks provides measurable performance gains.",
+    "action": "During hard training blocks or pre-competition, aim for 9-10 hours sleep. Add 60-90 minutes to normal sleep duration 3-5 days before key events. Track performance metrics to see individual response."
+  },
+  {
+    "topic": "Sleep Spindles & Motor Learning",
+    "source": "Nature Neuroscience - Motor Memory Study (2020)",
+    "summary": "Sleep spindles (bursts of brain activity in Stage 2 sleep) consolidate motor skills and movement patterns. Athletes learning new techniques show 20-30% better retention after full night's sleep compared to sleep deprivation. Consistent sleep maximizes skill acquisition.",
+    "action": "When learning new movements or techniques, prioritize 7-9 hours sleep that night. Avoid all-nighters or heavy sleep restriction during skill-learning phases. Quality Stage 2 sleep matters for motor memory."
+  },
+  {
+    "topic": "Microsleeps & Performance Decline",
+    "source": "Sleep - Cognitive Performance Study (2018)",
+    "summary": "Microsleeps are 2-30 second lapses in attention that occur involuntarily when sleep deprived. After one night of only 4-5 hours sleep, microsleeps increase 300%, severely impairing reaction time, decision-making, and coordination.",
+    "action": "Recognize early warning signs: frequent yawning, difficulty focusing, zoning out. If experiencing microsleeps, take immediate 20-minute nap or modify training intensity. Never train heavy/complex movements while sleep deprived."
+  },
+  {
+    "topic": "Mouth Taping for Nasal Breathing",
+    "source": "Journal of Clinical Sleep Medicine (2022)",
+    "summary": "Mouth breathing during sleep reduces oxygen saturation, increases snoring, and can worsen sleep quality. Gentle mouth taping (medical tape) promotes nasal breathing, which filters air, regulates CO2, and may reduce sleep apnea symptoms by 25-35% in mild cases.",
+    "action": "Use specialized mouth tape or hypoallergenic medical tape vertically across lips. Start with half-strip to build tolerance. Ensure nose is clear before sleep. Discontinue if uncomfortable or causing anxiety."
+  },
+  {
+    "topic": "White, Pink, and Brown Noise",
+    "source": "Frontiers in Human Neuroscience (2021)",
+    "summary": "White noise (equal intensity across frequencies) masks disruptive sounds. Pink noise (lower frequencies emphasized) may enhance deep sleep and memory by 30%. Brown noise (deepest frequencies) aids relaxation. All three can improve sleep onset by masking environmental sounds.",
+    "action": "Experiment with different noise types: white noise for blocking sounds, pink noise for deeper sleep, brown noise for relaxation. Use dedicated apps or machines at 50-70 decibels (conversational volume)."
+  },
+  {
+    "topic": "Sleep Divorce & Partner Impact",
+    "source": "Sleep Health - Co-Sleeping Study (2020)",
+    "summary": "Partners' sleep habits (snoring, movement, different schedules) reduce each person's sleep quality by 20-40 minutes per night. Couples sleeping separately report 15% better sleep quality and relationship satisfaction. Individual sleep needs may outweigh co-sleeping benefits.",
+    "action": "If partner disrupts your sleep consistently, discuss separate sleeping arrangements without stigma. Use weeknights for separate sleep, weekends together. Prioritize individual recovery, especially during hard training blocks."
+  },
+  {
+    "topic": "Mattress & Pillow Selection",
+    "source": "Journal of Chiropractic Medicine (2021)",
+    "summary": "Medium-firm mattresses provide best spinal alignment for most people. Side sleepers need thicker pillows (4-6 inches) to maintain neutral neck position. Back sleepers need thinner pillows (3-4 inches). Replace mattress every 7-10 years, pillows every 1-2 years.",
+    "action": "Test mattress firmness: should support spine in neutral alignment without pressure points. Pillow height should keep neck level with spine. Replace when showing wear or causing stiffness."
+  },
+  {
+    "topic": "Female Hormones & Sleep",
+    "source": "Journal of Women's Health - Menstrual Sleep Study (2020)",
+    "summary": "Progesterone levels fluctuate across menstrual cycle, affecting sleep. Luteal phase (days 15-28) shows increased body temperature and reduced REM sleep by 10-15%. Perimenopause and menopause bring hot flashes that fragment sleep, reducing deep sleep by 20-30%.",
+    "action": "Track sleep quality across cycle to identify patterns. In luteal phase, lower bedroom temperature 2-3 degrees. For menopause symptoms, prioritize cooling strategies and discuss hormone therapy with doctor if sleep severely impacted."
+  },
+  {
+    "topic": "Pregnancy & Postpartum Sleep",
+    "source": "Sleep Medicine Reviews - Maternal Sleep (2021)",
+    "summary": "Sleep quality decreases 30-40% during pregnancy due to discomfort and hormones. Postpartum, fragmented sleep (feeding every 2-3 hours) prevents deep sleep cycles. Sleep debt accumulates rapidly. Side sleeping (especially left side) improves circulation during pregnancy.",
+    "action": "During pregnancy: sleep on left side with pillow between knees. Postpartum: sleep when baby sleeps, accept help for night feedings, prioritize any 2-3 hour consolidated sleep blocks. Recovery takes 3-6 months minimum."
+  },
+  {
+    "topic": "Altitude & Sleep Quality",
+    "source": "High Altitude Medicine & Biology (2020)",
+    "summary": "Altitude above 8,000 feet reduces oxygen saturation, causing periodic breathing (alternating deep/shallow breaths) that fragments sleep. Deep sleep decreases 30-50% at altitude. Acclimatization takes 3-7 days. Sleep disturbance correlates with altitude sickness severity.",
+    "action": "When training at altitude: expect poor sleep first 3-5 nights, arrive early before competitions, sleep at lower altitude if possible (sleep low, train high). Acetazolamide may help but consult doctor. Hydrate aggressively."
+  },
+  {
+    "topic": "Travel Fatigue vs Jet Lag",
+    "source": "Journal of Travel Medicine (2019)",
+    "summary": "Travel fatigue (physical exhaustion from travel) differs from jet lag (circadian misalignment). North-south travel causes fatigue but not jet lag. East-west travel across 3+ time zones requires 1 day recovery per zone crossed. Red-eye flights prevent quality sleep due to noise and position.",
+    "action": "For travel fatigue: hydrate, move regularly, nap if needed. For jet lag: use light exposure strategy (bright light in morning for eastward, evening for westward). On red-eyes, use neck pillow, eye mask, earplugs, accept imperfect sleep."
   }
 ]
