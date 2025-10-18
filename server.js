@@ -164,7 +164,16 @@ async function handleIncomingMessage(req, res) {
     conversationHistory.reverse();
 
     // Build context about the user for better personalization
-const userContext = `User info: ${userData.name}, ${userData.age} years old, ${userData.gender}. Goals: ${userData.mainGoal || 'Not specified yet'}.${knowledgeContext}`;
+const userContext = `User: ${userData.name}, ${userData.age} years old, ${userData.gender}
+Goal: ${userData.mainGoal || 'Not specified'}
+Training: ${userData.trainingLevel || 'Unknown'} level, ${userData.trainingFrequency || 'Unknown'}, ${userData.trainingVolume || 'Unknown'} total
+Type: ${userData.primaryTrainingType || 'Unknown'}
+Sleep: ${userData.averageSleep || 'Unknown'} per night average
+Challenge: ${userData.biggestChallenge || 'Not specified'}
+Nutrition: ${userData.nutritionApproach || 'Not specified'}
+Supplements: ${userData.supplements ? userData.supplements.join(', ') : 'None'}
+Wearable: ${userData.wearableDevice || 'None'}
+Training time: ${userData.trainingTime || 'Unknown'}${userData.injuryNotes ? `\nInjury notes: ${userData.injuryNotes}` : ''}${knowledgeContext}`;
 // Retrieve relevant knowledge insight
     const insight = await retrieveInsight(userMessage);
     
