@@ -58,5 +58,107 @@
     "source": "Cognitive Therapy and Research (2019)",
     "summary": "Journaling or mindfulness before bed lowers cortisol and racing thoughts.",
     "action": "Encourage evening reflection or gratitude journaling to reduce stress before sleep."
+  },
+  {
+    "topic": "Sleep Environment Optimization",
+    "source": "National Sleep Foundation Guidelines (2022)",
+    "summary": "Optimal sleep environment requires complete darkness, minimal noise (below 30 decibels), and a comfortable mattress. Even small amounts of light can suppress melatonin production and fragment sleep architecture.",
+    "action": "Use blackout curtains, white noise machines, and invest in a quality mattress. Consider an eye mask if complete darkness isn't achievable."
+  },
+  {
+    "topic": "Bedroom Temperature Control",
+    "source": "Sleep Medicine Reviews - Thermoregulation Study (2019)",
+    "summary": "Core body temperature must drop 2-3 degrees Fahrenheit to initiate sleep. Bedroom temperature between 60-67°F (15-19°C) facilitates this drop and improves deep sleep stages.",
+    "action": "Set bedroom thermostat to 65-68°F. Use breathable bedding and consider cooling devices if needed."
+  },
+  {
+    "topic": "Blue Light Blocking",
+    "source": "Harvard Medical School - Blue Light Research (2020)",
+    "summary": "Blue light wavelengths (450-480nm) suppress melatonin more than any other wavelength. Exposure 2-3 hours before bed can delay sleep onset by 30-60 minutes and reduce REM sleep.",
+    "action": "Use blue light blocking glasses after sunset or enable night mode on devices. Dim all screens 2 hours before bed."
+  },
+  {
+    "topic": "Magnesium for Sleep",
+    "source": "Journal of Research in Medical Sciences (2021)",
+    "summary": "Magnesium glycinate (200-400mg) taken 30-60 minutes before bed increases GABA activity and reduces cortisol. Studies show 17% improvement in sleep efficiency and reduced nighttime waking.",
+    "action": "Consider 300mg magnesium glycinate 30-60 minutes before bed. Avoid magnesium citrate which can cause digestive issues."
+  },
+  {
+    "topic": "Meal Timing & Digestion",
+    "source": "Cell Metabolism Journal (2020)",
+    "summary": "Eating within 2-3 hours of bedtime keeps core body temperature elevated and activates digestive processes that conflict with sleep initiation. Large meals increase reflux risk and reduce deep sleep by 15-20%.",
+    "action": "Finish last meal 3 hours before bed. If hungry, choose light protein snacks like Greek yogurt or a small handful of nuts."
+  },
+  {
+    "topic": "Hydration Balance",
+    "source": "Sleep Health Journal (2019)",
+    "summary": "Dehydration impairs sleep quality, but excessive evening fluid intake causes nocturia (nighttime urination) that fragments sleep architecture. Each nighttime bathroom trip costs 20-30 minutes of sleep.",
+    "action": "Front-load hydration during daytime hours. Limit fluids to small sips 90 minutes before bed."
+  },
+  {
+    "topic": "Sleep Cycles & Timing",
+    "source": "Journal of Sleep Research - Ultradian Rhythms (2018)",
+    "summary": "Sleep occurs in 90-minute cycles alternating between light, deep, and REM sleep. Waking mid-cycle causes severe grogginess (sleep inertia). Complete cycles are crucial for memory consolidation and recovery.",
+    "action": "Plan sleep in 90-minute multiples (6, 7.5, or 9 hours). Use sleep calculator apps to time wake-ups between cycles."
+  },
+  {
+    "topic": "REM vs Deep Sleep",
+    "source": "Nature Reviews Neuroscience (2021)",
+    "summary": "Deep sleep (stages 3-4) drives physical recovery, immune function, and growth hormone release. REM sleep handles emotional processing, memory consolidation, and creativity. Both are essential and occur in different cycle proportions.",
+    "action": "Track sleep stages with wearables. Prioritize 7-9 hours to ensure adequate time in both deep and REM phases."
+  },
+  {
+    "topic": "Sleep Debt & Recovery",
+    "source": "Current Biology - Sleep Deprivation Study (2020)",
+    "summary": "Sleep debt accumulates exponentially and cannot be fully repaid with single recovery nights. Chronic restriction of even 1-2 hours per night impairs cognitive function equivalent to full sleep deprivation after 10 days.",
+    "action": "Add 1 extra hour per night for 3-4 consecutive nights to recover from acute debt. Prevent chronic debt by maintaining consistent 7-9 hour schedules."
+  },
+  {
+    "topic": "Pre-Bed Wind-Down Routine",
+    "source": "Journal of Clinical Sleep Medicine (2019)",
+    "summary": "A consistent 30-60 minute wind-down routine signals the brain to initiate sleep processes. Activities that reduce sympathetic nervous system activity (reading, stretching, meditation) improve sleep onset by 35%.",
+    "action": "Establish a fixed routine 60 minutes before bed: dim lights, light reading, gentle stretching, or meditation. Avoid screens and stimulating content."
+  },
+  {
+    "topic": "Sleep Tracking & Interpretation",
+    "source": "Sleep Medicine Reviews - Wearable Validation (2022)",
+    "summary": "Consumer sleep trackers are 80-85% accurate for total sleep time but less reliable for sleep stages. Focus on trends over weeks rather than single nights. Consistency matters more than perfect scores.",
+    "action": "Use trackers to identify patterns in sleep duration, consistency, and wake times. Don't obsess over daily stage percentages."
+  },
+  {
+    "topic": "Sleep Apnea Awareness",
+    "source": "American Academy of Sleep Medicine (2021)",
+    "summary": "Obstructive sleep apnea affects 25% of men and 10% of women, causing repeated breathing cessations that fragment sleep and reduce oxygen levels. Untreated OSA increases cardiovascular disease risk by 300%.",
+    "action": "Watch for symptoms: loud snoring, gasping, morning headaches, daytime fatigue. Get a sleep study if suspected."
+  },
+  {
+    "topic": "Shift Work & Circadian Disruption",
+    "source": "Nature - Circadian Medicine (2020)",
+    "summary": "Night shift work disrupts circadian rhythms, reducing sleep quality by 40% and increasing metabolic disease risk. Light exposure timing is critical for phase shifting the internal clock.",
+    "action": "Use bright light during work hours, complete darkness for daytime sleep. Consider circadian-supportive supplements like melatonin (0.5-1mg)."
+  },
+  {
+    "topic": "Jet Lag Recovery Protocols",
+    "source": "Journal of Travel Medicine (2021)",
+    "summary": "Jet lag severity correlates with time zones crossed (1 day recovery per zone). Eastward travel is harder than westward. Strategic light exposure, meal timing, and melatonin can accelerate adaptation by 50%.",
+    "action": "Pre-shift sleep schedule 2-3 days before travel. Use bright light in morning for eastward travel, evening for westward. Take 0.5mg melatonin at target bedtime."
+  },
+  {
+    "topic": "Breathing Techniques for Sleep",
+    "source": "International Journal of Behavioral Medicine (2020)",
+    "summary": "4-7-8 breathing (inhale 4 seconds, hold 7, exhale 8) activates parasympathetic nervous system and reduces sleep onset time by 45%. Box breathing and coherent breathing also improve HRV and sleep quality.",
+    "action": "Practice 4-7-8 breathing for 3-4 cycles when getting into bed. Use as needed for mid-night wakings."
+  },
+  {
+    "topic": "Sleep Medication vs Natural Methods",
+    "source": "JAMA Internal Medicine - Sleep Aid Review (2021)",
+    "summary": "Prescription sleep aids reduce sleep onset but impair sleep architecture, particularly REM and deep sleep. Long-term use causes dependency and worsens underlying issues. Behavioral interventions show better long-term outcomes.",
+    "action": "Prioritize CBT-I (cognitive behavioral therapy for insomnia) and sleep hygiene before medications. If medications needed, use short-term only."
+  },
+  {
+    "topic": "Age-Related Sleep Changes",
+    "source": "Neuroscience & Biobehavioral Reviews (2020)",
+    "summary": "Deep sleep decreases 2% per decade after age 30. Older adults experience earlier circadian phase (earlier bedtime/wake), lighter sleep, and more fragmentation. These changes are normal but can be partially mitigated.",
+    "action": "Older adults should prioritize consistency, morning light exposure, and resistance training to preserve deep sleep. Accept 6-7 hours may be sufficient."
   }
 ]
