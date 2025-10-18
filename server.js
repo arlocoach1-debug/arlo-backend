@@ -3,6 +3,7 @@ const express = require('express');
 const twilio = require('twilio');
 const { Firestore } = require('@google-cloud/firestore');
 const OpenAI = require('openai');
+const { retrieveInsight } = require('./utils/retrieveInsight');
 require('dotenv').config();
 
 const app = express();
@@ -158,8 +159,15 @@ async function handleIncomingMessage(req, res) {
     conversationHistory.reverse();
 
     // Build context about the user for better personalization
-    const userContext = `User info: ${userData.name}, ${userData.age} years old, ${userData.gender}. Goals: ${userData.mainGoal || 'Not specified yet'}.`;
-
+const userContext = `User info: ${userData.name}, ${userData.age} years old, ${userData.gender}. Goals: ${userData.mainGoal || 'Not specified yet'}.${knowledgeContext}`;
+// Retrieve relevant knowledge insight
+    const insight = await retrieveInsight(userMessage);
+    
+    // Add insight to context if found
+    let knowledgeContext = '';
+    if (insight) {
+      knowledgeContext = `\n\nRelevant research insight:\nTopic: ${insight.topic}\nSource: ${insight.source}\nSummary: ${insight.summary}\nAction: ${insight.action}`;
+    }
     // Get AI response
     const completion = await openai.chat.completions.create({
       model: 'gpt-4o-mini',
