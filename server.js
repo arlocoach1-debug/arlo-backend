@@ -6,7 +6,8 @@ const admin = require('firebase-admin');
 const OpenAI = require('openai');
 const { retrieveInsight } = require('./utils/retrieveInsight');
 const { parseWorkout, generateWorkoutConfirmation } = require('./utils/workoutParser');
-const visionRoute = require("./route/visionRoute");
+const path = require("path");
+const visionRoute = require(path.join(__dirname, "route", "visionRoute"));
 require('dotenv').config();
 
 const app = express();
