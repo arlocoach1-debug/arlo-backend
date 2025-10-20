@@ -145,11 +145,11 @@ async function handleIncomingMessage(req, res) {
       const weekStartStr = weekStart.toISOString().split('T')[0];
 
       // Store workout in Firebase
-      await userRef.update({
-        'weeklyActivity.weekStart': weekStartStr,
-        'weeklyActivity.workoutsLogged': admin.firestore.FieldValue.arrayUnion(workout),
-        'weeklyActivity.lastMessageDate': admin.firestore.FieldValue.serverTimestamp()
-      });
+    await userRef.update({
+  'weeklyActivity.weekStart': weekStartStr,
+  'weeklyActivity.workoutsLogged': admin.firestore().FieldValue.arrayUnion(workout),
+  'weeklyActivity.lastMessageDate': admin.firestore().FieldValue.serverTimestamp()
+});
 
       // Send confirmation
       const confirmationMessage = generateWorkoutConfirmation(workout);
