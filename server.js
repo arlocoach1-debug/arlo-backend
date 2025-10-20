@@ -148,8 +148,8 @@ async function handleIncomingMessage(req, res) {
       // Store workout in Firebase
     await userRef.update({
   'weeklyActivity.weekStart': weekStartStr,
-  'weeklyActivity.workoutsLogged': admin.firestore().FieldValue.arrayUnion(workout),
-  'weeklyActivity.lastMessageDate': admin.firestore().FieldValue.serverTimestamp()
+'weeklyActivity.workoutsLogged': admin.firestore.FieldValue.arrayUnion(workout),
+'weeklyActivity.lastMessageDate': admin.firestore.FieldValue.serverTimestamp()
 });
 
       // Send confirmation
