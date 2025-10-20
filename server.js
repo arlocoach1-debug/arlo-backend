@@ -275,7 +275,6 @@ app.post('/trigger-weekly-progress', async (req, res) => {
 });
 
 const PORT = process.env.PORT || 3000;
-const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Arlo backend running on port ${PORT}`);
   console.log(`SMS Webhook: https://your-app.up.railway.app/sms`);
