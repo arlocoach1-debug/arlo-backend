@@ -64,5 +64,60 @@ router.post("/vision/analyze", visionLimiter, upload.single("image"), async (req
     res.status(500).json({ success: false, message: "Vision analysis failed." });
   }
 });
+// ===== VIDEO ANALYSIS ROUTE =====
+import ffmpeg from "fluent-ffmpeg";
+import path from "path";
+
+router.post("/analyze-video", visionLimiter, upload.single("video"), async (req, res) => {
+  try {
+    const filePath = req.file.path;
+    const frameDir = "./frames";
+
+    if (!fs.existsSync(frameDir)) fs.mkdirSync(frameDir);
+
+    await new Promise((resolve, reject) => {
+      ffmpeg(filePath)
+        .on("end", resolve)
+        .on("error", reject)
+        .screenshots({
+          timestamps: ["25%", "50%", "75%"],
+          filename: "frame-%i.png",
+          folder: frameDir,
+        });
+    });
+
+    const frameFiles = fs.readdirSync(frameDir).slice(0, 3);
+    let insights = [];
+
+    for (const frame of frameFiles) {
+      const framePath = path.join(frameDir, frame);
+      const base64Image = fs.readFileSync(framePath, { encoding: "base64" });
+
+      const response = await openai.chat.completions.create({
+        model: "gpt-4o-mini",
+        messages: [
+          {
+            role: "user",
+            content: [
+              { type: "text", text: "Analyze this workout frame for form, balance, or posture issues." },
+              { type: "image_url", image_url: `data:image/png;base64,${base64Image}` },
+            ],
+          },
+        ],
+      });
+
+      insights.push(response.choices[0].message.content);
+      fs.unlinkSync(framePath);
+    }
+
+    fs.unlinkSync(filePath);
+    res.json({ insights });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: "Error analyzing video" });
+  }
+});
+
+export default router;
 
 export default router;
