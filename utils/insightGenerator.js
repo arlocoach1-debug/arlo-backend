@@ -12,7 +12,8 @@ const openai = new OpenAI({
 async function generateWeeklyInsights(stats, userData, prompts) {
   // Handle no workouts case
   if (stats.noDataThisWeek) {
-    return `Hey ${userData.name || 'there'},
+    const name = userData.name || userData.firstName || 'there';
+    return `Hey ${name},
 
 I noticed you didn't log any workouts this week. No judgment - life happens!
 
@@ -21,12 +22,13 @@ Remember: one workout is infinitely better than zero. Even 15 minutes counts.
 What's one small thing you can do tomorrow to get back on track?`;
   }
 
-  // Build context for AI
+  // Build context for AI - handle missing fields
+  const name = userData.name || userData.firstName || 'User';
+  const goal = userData.goals || userData.primaryGoal || 'General fitness';
+  
   const context = `
-User: ${userData.name || 'User'}
-Goal: ${userData.goals || 'General fitness'}
-Age: ${userData.age || 'Not specified'}
-Experience: ${userData.experience || 'Not specified'}
+User: ${name}
+Goal: ${goal}
 
 Week Summary:
 - Total workouts: ${stats.totalWorkouts}
