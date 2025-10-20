@@ -32,7 +32,8 @@ router.post("/vision/analyze", visionLimiter, upload.single("image"), async (req
 const category = req.body.category || "workout_form"; // "nutrition" or "workout_form"
 
 // Step 1: Describe what to analyze
-let visualPrompt =
+let visualPrompt = 
+  category === "nutrition"
     ? "Analyze this image of food. Estimate calories, macros, and balance of nutrients. Keep it friendly and actionable."
     : "Analyze this workout form. Identify posture, alignment, and give quick, encouraging feedback like a human coach.";
 
