@@ -1,9 +1,9 @@
 // ===== VISION ANALYSIS ROUTE =====
-import OpenAI from "openai";
-import express from "express";
-import multer from "multer";
-import fs from "fs";
-import rateLimit from "express-rate-limit";
+const OpenAI = require("openai");
+const express = require("express");
+const multer = require("multer");
+const fs = require("fs");
+const ratelimit = require("express-rate-limit");
 const visionLimiter = rateLimit({
   windowMs: 24 * 60 * 60 * 1000, // 24 hours
   max: 5, // Limit each user to 5 uploads per day
@@ -118,6 +118,4 @@ router.post("/analyze-video", visionLimiter, upload.single("video"), async (req,
   }
 });
 
-export default router;
-
-export default router;
+module.exports = router;
