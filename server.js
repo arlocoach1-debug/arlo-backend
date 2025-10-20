@@ -262,7 +262,19 @@ Training time: ${userData.trainingTime || 'Unknown'}${userData.injuryNotes ? `\n
 // Twilio webhook endpoints
 app.post('/sms', handleIncomingMessage); // For SMS
 app.post('/whatsapp', handleIncomingMessage); // For WhatsApp (same handler)
+// Manual trigger for weekly progress (for testing)
+app.post('/trigger-weekly-progress', async (req, res) => {
+  const { sendWeeklyProgressReports } = require('./cron/weeklyProgressCheck');
+  
+  try {
+    await sendWeeklyProgressReports();
+    res.json({ success: true, message: 'Weekly progress reports sent' });
+  } catch (error) {
+    res.status(500).json({ success: false, error: error.message });
+  }
+});
 
+const PORT = process.env.PORT || 3000;
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Arlo backend running on port ${PORT}`);
