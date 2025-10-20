@@ -128,6 +128,37 @@ async function handleIncomingMessage(req, res) {
 
     const userData = userDoc.data();
 
+    // Check if message is a workout log
+    const { parseWorkout, generateWorkoutConfirmation } = require('./utils/workoutParser');
+    const workout = parseWorkout(userMessage);
+    
+    if (workout) {
+      console.log('🏋️ Workout detected:', workout);
+      
+      // Get current week start (Monday)
+      const now = new Date();
+      const dayOfWeek = now.getDay();
+      const daysToMonday = (dayOfWeek + 6) % 7;
+      const weekStart = new Date(now);
+      weekStart.setDate(now.getDate() - daysToMonday);
+      weekStart.setHours(0, 0, 0, 0);
+      const weekStartStr = weekStart.toISOString().split('T')[0];
+
+      // Store workout in Firebase
+      await userRef.update({
+        'weeklyActivity.weekStart': weekStartStr,
+        'weeklyActivity.workoutsLogged': admin.firestore.FieldValue.arrayUnion(workout),
+        'weeklyActivity.lastMessageDate': admin.firestore.FieldValue.serverTimestamp()
+      });
+
+      // Send confirmation
+      const confirmationMessage = generateWorkoutConfirmation(workout);
+      const twilioResponse = new twilio.twiml.MessagingResponse();
+      twilioResponse.message(confirmationMessage);
+      
+      console.log('✅ Workout logged for user:', userPhone);
+      return res.type('text/xml').send(twilioResponse.toString());
+    }
     // Check subscription status
     if (userData.subscriptionStatus === 'cancelled' || userData.subscriptionStatus === 'inactive') {
       console.log(`Inactive subscription for: ${userPhone}`);
