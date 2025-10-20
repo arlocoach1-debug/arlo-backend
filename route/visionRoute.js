@@ -58,6 +58,7 @@ const visualInsight =
 
 // Step 4: Pull related insight from the knowledge base
 const topic =
+  category === "nutrition"
     ? "nutrition_fueling"
     : "performance_optimization";
 
