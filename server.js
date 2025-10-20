@@ -2,6 +2,7 @@
 const express = require('express');
 const twilio = require('twilio');
 const { Firestore } = require('@google-cloud/firestore');
+const admin = require('firebase-admin');
 const OpenAI = require('openai');
 const { retrieveInsight } = require('./utils/retrieveInsight');
 const { parseWorkout, generateWorkoutConfirmation } = require('./utils/workoutParser');
@@ -11,20 +12,20 @@ const app = express();
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
-// Initialize Firestore with service account from environment variable
-let firestoreConfig = {
-  projectId: process.env.FIREBASE_PROJECT_ID
-};
-
-// Use separate environment variables for credentials
-if (process.env.FIREBASE_PRIVATE_KEY && process.env.FIREBASE_CLIENT_EMAIL) {
-  firestoreConfig.credentials = {
-    client_email: process.env.FIREBASE_CLIENT_EMAIL,
-    private_key: process.env.FIREBASE_PRIVATE_KEY.replace(/\\n/g, '\n')
+// Initialize Firebase Admin with service account from environment variable
+if (!admin.apps.length) {
+  const serviceAccount = {
+    projectId: process.env.FIREBASE_PROJECT_ID,
+    clientEmail: process.env.FIREBASE_CLIENT_EMAIL,
+    privateKey: process.env.FIREBASE_PRIVATE_KEY.replace(/\\n/g, '\n')
   };
+  
+  admin.initializeApp({
+    credential: admin.credential.cert(serviceAccount)
+  });
 }
 
-const firestore = new Firestore(firestoreConfig);
+const firestore = admin.firestore();
 
 const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY
