@@ -33,9 +33,24 @@ async function sendWeeklyProgressReports() {
           console.log(`⏭️  Skipping inactive user: ${userId}`);
           continue;
         }
+// Skip users who signed up less than 5 days ago
+      const createdAt = userData.created_at || userData.createdAt;
+      if (createdAt) {
+        const daysSinceSignup = (Date.now() - new Date(createdAt).getTime()) / (1000 * 60 * 60 * 24);
+        if (daysSinceSignup < 5) {
+          console.log(`⏭️  Skipping new user (${daysSinceSignup.toFixed(0)} days old): ${userId}`);
+          continue;
+        }
+      }
 
+      // Skip users with no workouts this week
+     
+      if (workouts.length === 0) {
+        console.log(`⏭️  Skipping user with no workouts this week: ${userId}`);
+        continue;
+      }
         // Get this week's workouts
-        const workouts = userData.weeklyActivity?.workoutsLogged || [];
+    
         const weekStart = userData.weeklyActivity?.weekStart || new Date().toISOString().split('T')[0];
 
         // Calculate stats
