@@ -6,11 +6,13 @@ const admin = require('firebase-admin');
 const OpenAI = require('openai');
 const { retrieveInsight } = require('./utils/retrieveInsight');
 const { parseWorkout, generateWorkoutConfirmation } = require('./utils/workoutParser');
+const visionRoute = require("./routes/visionRoute");
 require('dotenv').config();
 
 const app = express();
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
+app.use("/vision", visionRoute);
 
 // Initialize Firebase Admin with service account from environment variable
 if (!admin.apps.length) {
