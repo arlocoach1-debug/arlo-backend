@@ -263,7 +263,7 @@ Training time: ${userData.trainingTime || 'Unknown'}${userData.injuryNotes ? `\n
 
 // Twilio webhook endpoints
 // ===== MEDIA HANDLING FOR WHATSAPP (Images & Videos) =====
-import axios from "axios";
+const axios = require("axios");
 
 app.post("/whatsapp", async (req, res) => {
   try {
