@@ -73,9 +73,10 @@ ${insight ? `Quick research-backed tip: ${insight.action}` : ""}
 `;
 
     // Prompt context for workout form & nutrition
-    const context =
-        ? "Analyze the image of food for calorie, macro, and nutrient estimates. Provide clear, concise analysis for athletes."
-        : "Analyze the user’s workout form in this image or short clip. Identify any mistakes in posture, balance, or movement. Give 1–2 actionable tips to improve.";
+  const context =
+  category === "nutrition"
+    ? "Analyze the image of food for calorie, macro, and nutrient estimates. Provide clear, concise analysis for athletes."
+    : "Analyze the user's workout form in this image or short clip. Identify any mistakes in posture, balance, or movement. Give 1-2 actionable tips to improve.";
 
     const response = await openai.chat.completions.create({
       model: "gpt-4o-mini",
