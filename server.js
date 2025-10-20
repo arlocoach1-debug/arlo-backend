@@ -262,6 +262,58 @@ Training time: ${userData.trainingTime || 'Unknown'}${userData.injuryNotes ? `\n
 }
 
 // Twilio webhook endpoints
+// ===== MEDIA HANDLING FOR WHATSAPP (Images & Videos) =====
+import axios from "axios";
+
+app.post("/whatsapp", async (req, res) => {
+  try {
+    const from = req.body.From;
+    const numMedia = parseInt(req.body.NumMedia || "0");
+
+    // If media (image or video) is attached
+    if (numMedia > 0) {
+      const mediaUrl = req.body.MediaUrl0;
+      const mediaType = req.body.MediaContentType0;
+
+      // IMAGE
+      if (mediaType.startsWith("image")) {
+        const response = await axios.post(
+          "https://arlo-backend-production.up.railway.app/vision/analyze",
+          { image: mediaUrl }
+        );
+
+        await twilio.messages.create({
+          from: "whatsapp:+14155238886", // your Twilio number
+          to: from,
+          body: `📸 Image analyzed:\n${response.data.analysis}`,
+        });
+      }
+
+      // VIDEO
+      else if (mediaType.startsWith("video")) {
+        const response = await axios.post(
+          "https://arlo-backend-production.up.railway.app/vision/analyze-video",
+          { video: mediaUrl }
+        );
+
+        await twilio.messages.create({
+          from: "whatsapp:+14155238886",
+          to: from,
+          body: `🎥 Video analyzed:\n${response.data.insights.join("\n\n")}`,
+        });
+      }
+
+      return res.sendStatus(200);
+    }
+
+    // If no media, continue to normal message handler
+    await handleIncomingMessage(req, res);
+  } catch (err) {
+    console.error("WhatsApp media error:", err);
+    res.status(500).send("Error processing media");
+  }
+});
+
 app.post('/sms', handleIncomingMessage); // For SMS
 app.post('/whatsapp', handleIncomingMessage); // For WhatsApp (same handler)
 // Manual trigger for weekly progress (for testing)
