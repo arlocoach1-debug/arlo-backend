@@ -108,8 +108,8 @@ ${insight ? `Quick research-backed tip: ${insight.action}` : ""}
   }
 });
 // ===== VIDEO ANALYSIS ROUTE =====
-import ffmpeg from "fluent-ffmpeg";
-import path from "path";
+const ffmpeg = require("fluent-ffmpeg");
+const path = require("path");
 
 router.post("/analyze-video", visionLimiter, upload.single("video"), async (req, res) => {
   try {
