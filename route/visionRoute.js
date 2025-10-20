@@ -3,6 +3,16 @@ import OpenAI from "openai";
 import express from "express";
 import multer from "multer";
 import fs from "fs";
+import rateLimit from "express-rate-limit";
+const visionLimiter = rateLimit({
+  windowMs: 24 * 60 * 60 * 1000, // 24 hours
+  max: 5, // Limit each user to 5 uploads per day
+  message: {
+    error: "You’ve reached your daily upload limit. Try again tomorrow.",
+  },
+  keyGenerator: (req) => req.body.userId || req.ip, // identify by user or IP
+});
+
 
 const upload = multer({ dest: "uploads/" });
 const router = express.Router();
@@ -12,7 +22,7 @@ const openai = new OpenAI({
 });
 
 // POST /vision/analyze
-router.post("/vision/analyze", upload.single("image"), async (req, res) => {
+router.post("/vision/analyze", visionLimiter, upload.single("image"), async (req, res) => {
   try {
     const filePath = req.file.path;
     const fileData = fs.readFileSync(filePath);
