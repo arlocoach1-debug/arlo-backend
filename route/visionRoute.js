@@ -73,7 +73,6 @@ ${insight ? `Quick research-backed tip: ${insight.action}` : ""}
 `;
 
     // Prompt context for workout form & nutrition
-    const category = req.body.category || "workout_form"; // or 'nutrition'
     const context =
       category === "nutrition"
         ? "Analyze the image of food for calorie, macro, and nutrient estimates. Provide clear, concise analysis for athletes."
