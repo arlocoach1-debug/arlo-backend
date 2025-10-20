@@ -4,6 +4,7 @@ const twilio = require('twilio');
 const { Firestore } = require('@google-cloud/firestore');
 const OpenAI = require('openai');
 const { retrieveInsight } = require('./utils/retrieveInsight');
+const { parseWorkout, generateWorkoutConfirmation } = require('./utils/workoutParser');
 require('dotenv').config();
 
 const app = express();
