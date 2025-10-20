@@ -4,6 +4,7 @@ const express = require("express");
 const multer = require("multer");
 const fs = require("fs");
 const ratelimit = require("express-rate-limit");
+const { retrieveInsight } = require("../utils/retrieveInsight");
 const visionLimiter = rateLimit({
   windowMs: 24 * 60 * 60 * 1000, // 24 hours
   max: 5, // Limit each user to 5 uploads per day
@@ -27,6 +28,49 @@ router.post("/vision/analyze", visionLimiter, upload.single("image"), async (req
     const filePath = req.file.path;
     const fileData = fs.readFileSync(filePath);
     const base64Image = fileData.toString("base64");
+// STEP: Analyze the visual input using Vision + Knowledge Base
+const category = req.body.category || "workout_form"; // "nutrition" or "workout_form"
+
+// Step 1: Describe what to analyze
+let visualPrompt =
+  category === "nutrition"
+    ? "Analyze this image of food. Estimate calories, macros, and balance of nutrients. Keep it friendly and actionable."
+    : "Analyze this workout form. Identify posture, alignment, and give quick, encouraging feedback like a human coach.";
+
+// Step 2: Get AI Vision interpretation
+const visualResponse = await openai.chat.completions.create({
+  model: "gpt-4o-mini",
+  messages: [
+    {
+      role: "user",
+      content: [
+        { type: "text", text: visualPrompt },
+        { type: "image_url", image_url: `data:image/jpeg;base64,${base64Image}` },
+      ],
+    },
+  ],
+});
+
+// Step 3: Extract AI feedback
+const visualInsight =
+  visualResponse.choices?.[0]?.message?.content ||
+  "I couldn’t interpret this image clearly.";
+
+// Step 4: Pull related insight from the knowledge base
+const topic =
+  category === "nutrition"
+    ? "nutrition_fueling"
+    : "performance_optimization";
+
+const insight = await retrieveInsight(visualInsight, topic);
+
+// Step 5: Combine both into one natural message
+const combinedResponse = `
+${category === "nutrition" ? "🥗" : "💪"} Here's what I noticed:
+${visualInsight}
+
+${insight ? `Quick research-backed tip: ${insight.action}` : ""}
+`;
 
     // Prompt context for workout form & nutrition
     const category = req.body.category || "workout_form"; // or 'nutrition'
@@ -58,7 +102,7 @@ router.post("/vision/analyze", visionLimiter, upload.single("image"), async (req
     fs.unlinkSync(filePath); // delete temp image
 
     const analysis = response.choices[0].message.content;
-    res.json({ success: true, analysis });
+ res.json({ success: true, analysis: combinedResponse });
   } catch (err) {
     console.error("Vision error:", err);
     res.status(500).json({ success: false, message: "Vision analysis failed." });
