@@ -316,7 +316,6 @@ app.post("/whatsapp", async (req, res) => {
 });
 
 app.post('/sms', handleIncomingMessage); // For SMS
-app.post('/whatsapp', handleIncomingMessage); // For WhatsApp (same handler)
 // Manual trigger for weekly progress (for testing)
 app.post('/trigger-weekly-progress', async (req, res) => {
   const { sendWeeklyProgressReports } = require('./cron/weeklyProgressCheck');
