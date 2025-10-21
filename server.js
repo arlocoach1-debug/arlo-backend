@@ -266,7 +266,7 @@ Training time: ${userData.trainingTime || 'Unknown'}${userData.injuryNotes ? `\n
 // ===== MEDIA HANDLING FOR WHATSAPP (Images & Videos) =====
 const axios = require("axios");
 
-app.post("/whatsapp", async (req, res) => {
+app.post('/whatsapp', handleIncomingMessage);
   try {
     const from = req.body.From;
     const numMedia = parseInt(req.body.NumMedia || "0");
@@ -299,7 +299,8 @@ app.post("/whatsapp", async (req, res) => {
           }]
         });
 
-      const analysis = analysisResponse.choices[0].message.content;
+     const analysis = analysisResponse.choices[0].message.content;
+
         await twilioClient.messages.create({
           from: formatForWhatsApp(process.env.TWILIO_WHATSAPP_NUMBER),
           to: from,
@@ -317,23 +318,6 @@ app.post("/whatsapp", async (req, res) => {
     }
   }
 });
-
-      // VIDEO
-      else if (mediaType.startsWith("video")) {
-        const response = await axios.post(
-          "https://arlo-backend-production.up.railway.app/vision/analyze-video",
-          { video: mediaUrl }
-        );
-
-        await twilio.messages.create({
-          from: "whatsapp:+14155238886",
-          to: from,
-          body: `🎥 Video analyzed:\n${response.data.insights.join("\n\n")}`,
-        });
-      }
-
-      return res.sendStatus(200);
-    }
 
     // If no media, continue to normal message handler
     await handleIncomingMessage(req, res);
