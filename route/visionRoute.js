@@ -3,7 +3,7 @@ const OpenAI = require("openai");
 const express = require("express");
 const multer = require("multer");
 const fs = require("fs");
-const ratelimit = require("express-rate-limit");
+const rateLimit = require("express-rate-limit");
 const { retrieveInsight } = require("../utils/retrieveInsight");
 const visionLimiter = rateLimit({
   windowMs: 24 * 60 * 60 * 1000, // 24 hours
