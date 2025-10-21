@@ -266,7 +266,7 @@ Training time: ${userData.trainingTime || 'Unknown'}${userData.injuryNotes ? `\n
 // ===== MEDIA HANDLING FOR WHATSAPP (Images & Videos) =====
 const axios = require("axios");
 
-app.post('/whatsapp', handleIncomingMessage);
+app.post("/whatsapp", async (req, res) => {
   try {
     const from = req.body.From;
     const numMedia = parseInt(req.body.NumMedia || "0");
