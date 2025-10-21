@@ -299,8 +299,7 @@ app.post("/whatsapp", async (req, res) => {
           }]
         });
 
-        const analysis = analysisResponse.choices[0].message.content;
-
+      const analysis = analysisResponse.choices[0].message.content;
         await twilioClient.messages.create({
           from: formatForWhatsApp(process.env.TWILIO_WHATSAPP_NUMBER),
           to: from,
@@ -310,7 +309,6 @@ app.post("/whatsapp", async (req, res) => {
 
       return;
     }
-
     await handleIncomingMessage(req, res);
   } catch (err) {
     console.error("WhatsApp media error:", err);
@@ -319,7 +317,6 @@ app.post("/whatsapp", async (req, res) => {
     }
   }
 });
-      }
 
       // VIDEO
       else if (mediaType.startsWith("video")) {
