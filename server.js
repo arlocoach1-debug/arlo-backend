@@ -271,23 +271,54 @@ app.post("/whatsapp", async (req, res) => {
     const from = req.body.From;
     const numMedia = parseInt(req.body.NumMedia || "0");
 
-    // If media (image or video) is attached
     if (numMedia > 0) {
       const mediaUrl = req.body.MediaUrl0;
       const mediaType = req.body.MediaContentType0;
 
-      // IMAGE
-      if (mediaType.startsWith("image")) {
-        const response = await axios.post(
-          "https://arlo-backend-production.up.railway.app/vision/analyze",
-          { image: mediaUrl }
-        );
+      res.sendStatus(200);
 
-        await twilio.messages.create({
-          from: "whatsapp:+14155238886", // your Twilio number
-          to: from,
-          body: `📸 Image analyzed:\n${response.data.analysis}`,
+      if (mediaType.startsWith("image")) {
+        const imageResponse = await axios.get(mediaUrl, {
+          responseType: 'arraybuffer',
+          auth: {
+            username: process.env.TWILIO_ACCOUNT_SID,
+            password: process.env.TWILIO_AUTH_TOKEN
+          }
         });
+        
+        const base64Image = Buffer.from(imageResponse.data).toString('base64');
+        
+        const analysisResponse = await openai.chat.completions.create({
+          model: "gpt-4o-mini",
+          messages: [{
+            role: "user",
+            content: [
+              { type: "text", text: "Analyze this image of food. Estimate calories, macros, and nutrients. Keep it brief and actionable." },
+              { type: "image_url", image_url: `data:image/jpeg;base64,${base64Image}` }
+            ]
+          }]
+        });
+
+        const analysis = analysisResponse.choices[0].message.content;
+
+        await twilioClient.messages.create({
+          from: formatForWhatsApp(process.env.TWILIO_WHATSAPP_NUMBER),
+          to: from,
+          body: `📸 ${analysis}`
+        });
+      }
+
+      return;
+    }
+
+    await handleIncomingMessage(req, res);
+  } catch (err) {
+    console.error("WhatsApp media error:", err);
+    if (!res.headersSent) {
+      res.status(500).send("Error processing media");
+    }
+  }
+});
       }
 
       // VIDEO
