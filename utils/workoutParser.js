@@ -5,6 +5,13 @@ const workoutKeywords = {
   strength: ['lift', 'lifting', 'lifted', 'squat', 'squats', 'deadlift', 'deadlifts', 'bench', 'press', 'curl', 'row', 'pull', 'push', 'workout', 'gym', 'weights', 'reps', 'sets', 'training']
 };
 
+// Question indicators - if message contains these, it's likely a question, not a log
+const questionIndicators = [
+  '?', 'should i', 'what do', 'how do', 'can i', 'is it', 'would it', 
+  'do you think', 'advice', 'help', 'recommend', 'suggest', 'opinion',
+  'supposed to', 'planning to', 'going to', 'about to', 'want to'
+];
+
 /**
  * Parses a message to detect if it's a workout log
  * @param {string} message - The incoming WhatsApp message
@@ -12,6 +19,18 @@ const workoutKeywords = {
  */
 function parseWorkout(message) {
   const lowerMessage = message.toLowerCase();
+  
+  // FILTER 1: If message contains question indicators, don't treat as workout log
+  const isQuestion = questionIndicators.some(indicator => lowerMessage.includes(indicator));
+  if (isQuestion) {
+    return null;
+  }
+  
+  // FILTER 2: If message is too long (>25 words), likely a question/conversation
+  const wordCount = message.trim().split(/\s+/).length;
+  if (wordCount > 25) {
+    return null;
+  }
   
   // Check if message contains workout indicators
   const hasCardioKeyword = workoutKeywords.cardio.some(keyword => lowerMessage.includes(keyword));
@@ -31,20 +50,16 @@ function parseWorkout(message) {
   };
 
   // Extract distance (5K, 10K, 3 miles, etc)
-  const distanceMatch = message.match(/(\d+\.?\d*)\s*(k|km|mile|miles|mi)/i);
+  const distanceMatch = message.match(/(\d+\.?\d*)\s*(k|km|mile|miles|mi)(?!\s*hour)/i);
   if (distanceMatch) {
     workout.details.distance = parseFloat(distanceMatch[1]);
     workout.details.unit = distanceMatch[2].toLowerCase();
   }
 
-  // Extract duration (27 minutes, 45 min, 1 hour, etc)
-  const durationMatch = message.match(/(\d+)\s*(min|minutes|hour|hours|hr)/i);
+  // Extract duration - ONLY match workout duration, not sleep hours
+  const durationMatch = message.match(/(?:in|took|for)\s*(\d+)\s*(min|minutes)/i);
   if (durationMatch) {
-    let duration = parseInt(durationMatch[1]);
-    if (durationMatch[2].includes('hour') || durationMatch[2] === 'hr') {
-      duration *= 60; // convert to minutes
-    }
-    workout.details.duration = duration;
+    workout.details.duration = parseInt(durationMatch[1]);
   }
 
   // Extract pace (5:24/km, 8:30/mile, etc)
@@ -62,8 +77,8 @@ function parseWorkout(message) {
   }
 
   // Extract sets (3 sets, 4x, etc)
-  const setsMatch = message.match(/(\d+)\s*(?:sets?|x)/i);
-  if (setsMatch && !workout.details.reps) { // avoid confusing with weight x reps
+  const setsMatch = message.match(/(\d+)\s*(?:sets?)/i);
+  if (setsMatch) {
     workout.details.sets = parseInt(setsMatch[1]);
   }
 
