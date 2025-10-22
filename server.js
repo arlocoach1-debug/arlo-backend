@@ -5,7 +5,7 @@ const { Firestore } = require('@google-cloud/firestore');
 const admin = require('firebase-admin');
 const OpenAI = require('openai');
 const { retrieveInsight } = require('./utils/retrieveInsight');
-const { parseWorkout, generateWorkoutConfirmation } = require('./utils/workoutParser');
+const { parseWorkout, generateWorkoutConfirmation, calculateStreak } = require('./utils/workoutParser');
 const path = require("path");
 const visionRoute = require(path.join(__dirname, "route", "visionRoute"));
 require('dotenv').config();
@@ -145,7 +145,6 @@ async function handleIncomingMessage(req, res) {
     }
 
     // Check if message is a workout log
-    const { parseWorkout, generateWorkoutConfirmation } = require('./utils/workoutParser');
     const workout = parseWorkout(userMessage);
     
     if (workout) {
@@ -168,8 +167,26 @@ async function handleIncomingMessage(req, res) {
         [rateLimitKey]: todayCount + 1
       });
 
-      // Send confirmation
-      const confirmationMessage = generateWorkoutConfirmation(workout);
+      // Calculate streak
+      const allWorkouts = [...(userData.weeklyActivity?.workoutsLogged || []), workout];
+      const currentStreak = calculateStreak(allWorkouts);
+
+      // Send confirmation with streak
+      let confirmationMessage = generateWorkoutConfirmation(workout);
+
+      // Add streak celebration for milestones
+      if (currentStreak === 3) {
+        confirmationMessage += '\n\n🔥 3-day streak! You\'re building momentum!';
+      } else if (currentStreak === 7) {
+        confirmationMessage += '\n\n🔥 7-day streak! One week strong!';
+      } else if (currentStreak === 14) {
+        confirmationMessage += '\n\n🔥 14-day streak! Two weeks of consistency!';
+      } else if (currentStreak === 30) {
+        confirmationMessage += '\n\n🔥 30-DAY STREAK! You\'re unstoppable!';
+      } else if (currentStreak > 2) {
+        confirmationMessage += `\n\n🔥 ${currentStreak}-day streak!`;
+      }
+
       const twilioResponse = new twilio.twiml.MessagingResponse();
       twilioResponse.message(confirmationMessage);
       
