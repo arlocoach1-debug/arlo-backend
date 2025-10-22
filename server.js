@@ -264,19 +264,8 @@ Training time: ${userData.trainingTime || 'Unknown'}${userData.injuryNotes ? `\n
 
 // Twilio webhook endpoints
 app.post('/whatsapp', handleIncomingMessage);
+app.post('/sms', handleIncomingMessage);
 
-     const analysis = analysisResponse.choices[0].message.content;
-
-        await twilioClient.messages.create({
-          from: formatForWhatsApp(process.env.TWILIO_WHATSAPP_NUMBER),
-          to: from,
-          body: `📸 ${analysis}`
-        });
-      }
-
-      return;
-    }
-app.post('/sms', handleIncomingMessage); // For SMS
 // Manual trigger for weekly progress (for testing)
 app.post('/trigger-weekly-progress', async (req, res) => {
   const { sendWeeklyProgressReports } = require('./cron/weeklyProgressCheck');
