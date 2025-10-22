@@ -263,41 +263,7 @@ Training time: ${userData.trainingTime || 'Unknown'}${userData.injuryNotes ? `\n
 }
 
 // Twilio webhook endpoints
-// ===== MEDIA HANDLING FOR WHATSAPP (Images & Videos) =====
-const axios = require("axios");
-
-app.post("/whatsapp", async (req, res) => {
-  try {
-    const from = req.body.From;
-    const numMedia = parseInt(req.body.NumMedia || "0");
-
-    if (numMedia > 0) {
-      const mediaUrl = req.body.MediaUrl0;
-      const mediaType = req.body.MediaContentType0;
-
-      res.sendStatus(200);
-
-      if (mediaType.startsWith("image")) {
-        const imageResponse = await axios.get(mediaUrl, {
-          responseType: 'arraybuffer',
-          auth: {
-            username: process.env.TWILIO_ACCOUNT_SID,
-            password: process.env.TWILIO_AUTH_TOKEN
-          }
-        });
-        
-        const base64Image = Buffer.from(imageResponse.data).toString('base64');
-        
-        const analysisResponse = await openai.chat.completions.create({
-          model: "gpt-4o-mini",
-          messages: [{
-            role: "user",
-            content: [
-              { type: "text", text: "Analyze this image of food. Estimate calories, macros, and nutrients. Keep it brief and actionable." },
-              { type: "image_url", image_url: `data:image/jpeg;base64,${base64Image}` }
-            ]
-          }]
-        });
+app.post('/whatsapp', handleIncomingMessage);
 
      const analysis = analysisResponse.choices[0].message.content;
 
