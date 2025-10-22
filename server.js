@@ -194,13 +194,13 @@ async function handleIncomingMessage(req, res) {
       return res.type('text/xml').send(twilioResponse.toString());
     }
     
-    // Check subscription status
-    if (userData.subscriptionStatus === 'cancelled' || userData.subscriptionStatus === 'inactive') {
-      console.log(`Inactive subscription for: ${userPhone}`);
-      const twimlResponse = new twilio.twiml.MessagingResponse();
-      twimlResponse.message('Your Arlo subscription has ended. Resubscribe at arlo.coach to continue coaching!');
-      return res.type('text/xml').send(twimlResponse.toString());
-    }
+  // Check subscription status
+if (userData.subscriptionStatus === 'cancelled' || userData.subscriptionStatus === 'inactive') {
+  console.log(`Inactive subscription for: ${userPhone}`);
+  const twimlResponse = new twilio.twiml.MessagingResponse();
+  twimlResponse.message('Your Arlo subscription has ended. Resubscribe here: https://buy.stripe.com/cNi3cu56lfaQ7rZ2zTg7e00');
+  return res.type('text/xml').send(twimlResponse.toString());
+}
 
     // Store incoming message
     await firestore.collection('messages').add({
