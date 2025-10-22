@@ -276,23 +276,6 @@ app.post('/whatsapp', handleIncomingMessage);
 
       return;
     }
-    await handleIncomingMessage(req, res);
-  } catch (err) {
-    console.error("WhatsApp media error:", err);
-    if (!res.headersSent) {
-      res.status(500).send("Error processing media");
-    }
-  }
-});
-
-    // If no media, continue to normal message handler
-    await handleIncomingMessage(req, res);
-  } catch (err) {
-    console.error("WhatsApp media error:", err);
-    res.status(500).send("Error processing media");
-  }
-});
-
 app.post('/sms', handleIncomingMessage); // For SMS
 // Manual trigger for weekly progress (for testing)
 app.post('/trigger-weekly-progress', async (req, res) => {
