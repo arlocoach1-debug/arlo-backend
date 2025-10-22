@@ -146,7 +146,43 @@ function generateWorkoutConfirmation(workout) {
   }
 }
 
+/**
+ * Calculate workout streak from workout logs
+ * @param {array} workouts - Array of workout objects with date field
+ * @returns {number} - Current streak in days
+ */
+function calculateStreak(workouts) {
+  if (!workouts || workouts.length === 0) return 0;
+
+  // Sort workouts by date (newest first)
+  const sortedWorkouts = workouts
+    .map(w => new Date(w.date))
+    .sort((a, b) => b - a);
+
+  let streak = 0;
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+
+  // Check consecutive days backwards from today
+  for (let i = 0; i < sortedWorkouts.length; i++) {
+    const workoutDate = new Date(sortedWorkouts[i]);
+    workoutDate.setHours(0, 0, 0, 0);
+
+    const expectedDate = new Date(today);
+    expectedDate.setDate(today.getDate() - streak);
+
+    if (workoutDate.getTime() === expectedDate.getTime()) {
+      streak++;
+    } else if (workoutDate < expectedDate) {
+      break; // Gap in streak
+    }
+  }
+
+  return streak;
+}
+
 module.exports = { 
   parseWorkout,
-  generateWorkoutConfirmation 
+  generateWorkoutConfirmation,
+  calculateStreak
 };
