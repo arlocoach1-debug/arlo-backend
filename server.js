@@ -132,6 +132,18 @@ async function handleIncomingMessage(req, res) {
 
     const userData = userDoc.data();
 
+    // Rate limiting: 50 messages per day per user
+    const today = new Date().toISOString().split('T')[0]; // YYYY-MM-DD
+    const rateLimitKey = `messageCount_${today}`;
+    const todayCount = userData[rateLimitKey] || 0;
+
+    if (todayCount >= 50) {
+      console.log(`Rate limit hit for ${userPhone}: ${todayCount} messages today`);
+      const twimlResponse = new twilio.twiml.MessagingResponse();
+      twimlResponse.message('You\'ve reached your daily message limit (50). Resets at midnight. Take a rest, champ! 💪');
+      return res.type('text/xml').send(twimlResponse.toString());
+    }
+
     // Check if message is a workout log
     const { parseWorkout, generateWorkoutConfirmation } = require('./utils/workoutParser');
     const workout = parseWorkout(userMessage);
@@ -149,11 +161,12 @@ async function handleIncomingMessage(req, res) {
       const weekStartStr = weekStart.toISOString().split('T')[0];
 
       // Store workout in Firebase
-    await userRef.update({
-  'weeklyActivity.weekStart': weekStartStr,
-'weeklyActivity.workoutsLogged': admin.firestore.FieldValue.arrayUnion(workout),
-'weeklyActivity.lastMessageDate': admin.firestore.FieldValue.serverTimestamp()
-});
+      await userRef.update({
+        'weeklyActivity.weekStart': weekStartStr,
+        'weeklyActivity.workoutsLogged': admin.firestore.FieldValue.arrayUnion(workout),
+        'weeklyActivity.lastMessageDate': admin.firestore.FieldValue.serverTimestamp(),
+        [rateLimitKey]: todayCount + 1
+      });
 
       // Send confirmation
       const confirmationMessage = generateWorkoutConfirmation(workout);
@@ -163,6 +176,7 @@ async function handleIncomingMessage(req, res) {
       console.log('✅ Workout logged for user:', userPhone);
       return res.type('text/xml').send(twilioResponse.toString());
     }
+    
     // Check subscription status
     if (userData.subscriptionStatus === 'cancelled' || userData.subscriptionStatus === 'inactive') {
       console.log(`Inactive subscription for: ${userPhone}`);
@@ -201,14 +215,15 @@ async function handleIncomingMessage(req, res) {
 
     // Build context about the user for better personalization
     // Retrieve relevant knowledge insight
-const insight = await retrieveInsight(userMessage);
+    const insight = await retrieveInsight(userMessage);
 
-// Add insight to context if found
-let knowledgeContext = '';
-if (insight) {
-  knowledgeContext = `\n\nRelevant research insight:\nTopic: ${insight.topic}\nSource: ${insight.source}\nSummary: ${insight.summary}\nAction: ${insight.action}`;
-}
-const userContext = `User: ${userData.name}, ${userData.age} years old, ${userData.gender}
+    // Add insight to context if found
+    let knowledgeContext = '';
+    if (insight) {
+      knowledgeContext = `\n\nRelevant research insight:\nTopic: ${insight.topic}\nSource: ${insight.source}\nSummary: ${insight.summary}\nAction: ${insight.action}`;
+    }
+    
+    const userContext = `User: ${userData.name}, ${userData.age} years old, ${userData.gender}
 Goal: ${userData.mainGoal || 'Not specified'}
 Training: ${userData.trainingLevel || 'Unknown'} level, ${userData.trainingFrequency || 'Unknown'}, ${userData.trainingVolume || 'Unknown'} total
 Type: ${userData.primaryTrainingType || 'Unknown'}
@@ -218,6 +233,7 @@ Nutrition: ${userData.nutritionApproach || 'Not specified'}
 Supplements: ${userData.supplements ? userData.supplements.join(', ') : 'None'}
 Wearable: ${userData.wearableDevice || 'None'}
 Training time: ${userData.trainingTime || 'Unknown'}${userData.injuryNotes ? `\nInjury notes: ${userData.injuryNotes}` : ''}${knowledgeContext}`;
+    
     // Get AI response
     const completion = await openai.chat.completions.create({
       model: 'gpt-4o-mini',
@@ -242,10 +258,11 @@ Training time: ${userData.trainingTime || 'Unknown'}${userData.injuryNotes ? `\n
       channel: isWhatsApp ? 'whatsapp' : 'sms'
     });
 
-    // Update user stats
+    // Update user stats and increment daily message count
     await userRef.update({
       messageCount: (userData.messageCount || 0) + 1,
-      lastMessageAt: new Date()
+      lastMessageAt: new Date(),
+      [rateLimitKey]: todayCount + 1
     });
 
     // Send response via Twilio
