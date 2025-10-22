@@ -2,7 +2,7 @@
 
 const workoutKeywords = {
   cardio: ['run', 'running', 'ran', 'jog', 'jogging', 'bike', 'biking', 'swim', 'swimming', 'row', 'rowing', 'hike', 'hiking', 'walked', 'walk'],
-  strength: ['lift', 'lifting', 'lifted', 'squat', 'squats', 'deadlift', 'deadlifts', 'bench', 'press', 'curl', 'row', 'pull', 'push', 'workout', 'gym', 'weights', 'reps', 'sets', 'training']
+  strength: ['lift', 'lifting', 'lifted', 'squat', 'squats', 'deadlift', 'deadlifts', 'bench', 'press', 'curl', 'row', 'pull', 'push', 'workout', 'gym', 'weights', 'reps', 'sets', 'training', 'chest', 'back', 'legs', 'shoulders', 'arms']
 };
 
 // Question indicators - if message contains these, it's likely a question, not a log
@@ -10,6 +10,40 @@ const questionIndicators = [
   '?', 'should i', 'what do', 'how do', 'can i', 'is it', 'would it', 
   'do you think', 'advice', 'help', 'recommend', 'suggest', 'opinion',
   'supposed to', 'planning to', 'going to', 'about to', 'want to'
+];
+
+// Expanded exercise database
+const exercises = [
+  // Chest
+  'bench press', 'bench', 'incline press', 'incline bench', 'decline press', 'decline bench',
+  'chest press', 'dumbbell press', 'db press', 'cable flies', 'cable fly', 'pec flies', 'pec fly',
+  'chest flies', 'chest fly', 'dips', 'push ups', 'pushups',
+  
+  // Back
+  'deadlift', 'deadlifts', 'barbell row', 'barbell rows', 'bent over row', 'bent row',
+  'dumbbell row', 'db row', 'cable row', 'seated row', 'lat pulldown', 'pulldown',
+  'pull up', 'pullup', 'pull-up', 'pullups', 'chin up', 'chinup', 'chin-up',
+  't-bar row', 'tbar row', 'face pulls', 'face pull',
+  
+  // Legs
+  'squat', 'squats', 'back squat', 'front squat', 'leg press', 'leg extension',
+  'leg curl', 'hamstring curl', 'calf raise', 'calf raises', 'lunges', 'lunge',
+  'bulgarian split squat', 'split squat', 'romanian deadlift', 'rdl', 'leg day',
+  
+  // Shoulders
+  'overhead press', 'ohp', 'shoulder press', 'military press', 'arnold press',
+  'lateral raise', 'lateral raises', 'front raise', 'front raises', 'rear delt fly',
+  'rear delt flies', 'face pull', 'shrugs', 'shrug',
+  
+  // Arms
+  'bicep curl', 'bicep curls', 'curls', 'curl', 'hammer curl', 'hammer curls',
+  'preacher curl', 'concentration curl', 'tricep extension', 'tricep extensions',
+  'skull crusher', 'skull crushers', 'dips', 'close grip bench', 'tricep pushdown',
+  'tricep dips',
+  
+  // Core
+  'plank', 'planks', 'sit up', 'sit ups', 'crunches', 'crunch', 'leg raise', 'leg raises',
+  'russian twist', 'russian twists', 'ab wheel', 'hanging leg raise'
 ];
 
 /**
@@ -26,9 +60,9 @@ function parseWorkout(message) {
     return null;
   }
   
-  // FILTER 2: If message is too long (>25 words), likely a question/conversation
+  // FILTER 2: If message is too long (>50 words), likely a question/conversation
   const wordCount = message.trim().split(/\s+/).length;
-  if (wordCount > 25) {
+  if (wordCount > 50) {
     return null;
   }
   
@@ -41,11 +75,24 @@ function parseWorkout(message) {
     return null;
   }
 
-  // Base workout object
+  // Determine workout type
+  const isCardio = hasCardioKeyword && !hasStrengthKeyword;
+  
+  if (isCardio) {
+    return parseCardioWorkout(message);
+  } else {
+    return parseStrengthWorkout(message);
+  }
+}
+
+/**
+ * Parse cardio workout (distance-based)
+ */
+function parseCardioWorkout(message) {
   const workout = {
     date: new Date().toISOString(),
     rawMessage: message,
-    type: hasCardioKeyword ? 'cardio' : 'strength',
+    type: 'cardio',
     details: {}
   };
 
@@ -56,55 +103,89 @@ function parseWorkout(message) {
     workout.details.unit = distanceMatch[2].toLowerCase();
   }
 
-  // Extract duration - ONLY match workout duration, not sleep hours
+  // Extract duration
   const durationMatch = message.match(/(?:in|took|for)\s*(\d+)\s*(min|minutes)/i);
   if (durationMatch) {
     workout.details.duration = parseInt(durationMatch[1]);
   }
 
-  // Extract pace (5:24/km, 8:30/mile, etc)
+  // Extract pace
   const paceMatch = message.match(/(\d+):(\d+)\s*\/\s*(km|mile|mi)/i);
   if (paceMatch) {
     workout.details.pace = `${paceMatch[1]}:${paceMatch[2]}/${paceMatch[3]}`;
   }
 
-  // Extract weight and reps (315x5, 225 for 8 reps, 185lbs x 10, etc)
-  const weightRepsMatch = message.match(/(\d+)\s*(lbs?|kg)?\s*(?:x|for|×)\s*(\d+)\s*(?:reps?)?/i);
-  if (weightRepsMatch) {
-    workout.details.weight = parseInt(weightRepsMatch[1]);
-    workout.details.reps = parseInt(weightRepsMatch[3]);
-    workout.details.weightUnit = weightRepsMatch[2] || 'lbs';
+  return workout;
+}
+
+/**
+ * Parse strength workout (multi-exercise)
+ */
+function parseStrengthWorkout(message) {
+  const workout = {
+    date: new Date().toISOString(),
+    rawMessage: message,
+    type: 'strength',
+    exercises: []
+  };
+
+  // Split by common delimiters: commas, "then", "and", newlines
+  const segments = message.split(/,|\bthen\b|\band\b|\n/i);
+
+  for (const segment of segments) {
+    const exercise = parseExerciseSegment(segment.trim());
+    if (exercise) {
+      workout.exercises.push(exercise);
+    }
   }
 
-  // Extract sets (3 sets, 4x, etc)
-  const setsMatch = message.match(/(\d+)\s*(?:sets?)/i);
-  if (setsMatch) {
-    workout.details.sets = parseInt(setsMatch[1]);
+  // If no exercises parsed, return null
+  if (workout.exercises.length === 0) {
+    return null;
   }
 
-  // Extract exercise name
-  const exercises = [
-    'squat', 'squats',
-    'deadlift', 'deadlifts',
-    'bench press', 'bench',
-    'overhead press', 'ohp',
-    'barbell row', 'row', 'rows',
-    'pull up', 'pullup', 'pull-up', 'pullups',
-    'chin up', 'chinup', 'chin-up',
-    'bicep curl', 'curls',
-    'leg press',
-    'lat pulldown',
-    'shoulder press'
-  ];
+  return workout;
+}
+
+/**
+ * Parse individual exercise segment
+ * Examples: "bench 225x10 3 sets", "incline press 185 for 8 reps 3 sets"
+ */
+function parseExerciseSegment(segment) {
+  const lowerSegment = segment.toLowerCase();
   
+  // Find exercise name
+  let exerciseName = null;
   for (const exercise of exercises) {
-    if (lowerMessage.includes(exercise)) {
-      workout.details.exercise = exercise;
+    if (lowerSegment.includes(exercise)) {
+      exerciseName = exercise;
       break;
     }
   }
 
-  return workout;
+  if (!exerciseName) {
+    return null;
+  }
+
+  const exerciseData = {
+    name: exerciseName
+  };
+
+  // Extract weight and reps: "225x10", "185 for 8", "30lbs x 12"
+  const weightRepsMatch = segment.match(/(\d+)\s*(lbs?|kg)?\s*(?:x|for|×)\s*(\d+)\s*(?:reps?)?/i);
+  if (weightRepsMatch) {
+    exerciseData.weight = parseInt(weightRepsMatch[1]);
+    exerciseData.weightUnit = weightRepsMatch[2] || 'lbs';
+    exerciseData.reps = parseInt(weightRepsMatch[3]);
+  }
+
+  // Extract sets: "3 sets", "4 sets"
+  const setsMatch = segment.match(/(\d+)\s*sets?/i);
+  if (setsMatch) {
+    exerciseData.sets = parseInt(setsMatch[1]);
+  }
+
+  return exerciseData;
 }
 
 /**
@@ -131,14 +212,29 @@ function generateWorkoutConfirmation(workout) {
   } else {
     let msg = '✅ Workout logged!\n\n';
     
-    if (workout.details.exercise) {
-      msg += `Exercise: ${workout.details.exercise}\n`;
-    }
-    if (workout.details.weight && workout.details.reps) {
-      msg += `${workout.details.weight}${workout.details.weightUnit} × ${workout.details.reps} reps\n`;
-    }
-    if (workout.details.sets) {
-      msg += `Sets: ${workout.details.sets}\n`;
+    // List all exercises
+    if (workout.exercises.length === 1) {
+      const ex = workout.exercises[0];
+      msg += `Exercise: ${ex.name}\n`;
+      if (ex.weight && ex.reps) {
+        msg += `${ex.weight}${ex.weightUnit} × ${ex.reps} reps`;
+        if (ex.sets) {
+          msg += `, ${ex.sets} sets`;
+        }
+        msg += '\n';
+      }
+    } else {
+      msg += `${workout.exercises.length} exercises:\n`;
+      workout.exercises.forEach(ex => {
+        msg += `• ${ex.name}`;
+        if (ex.weight && ex.reps) {
+          msg += `: ${ex.weight}${ex.weightUnit} × ${ex.reps} reps`;
+          if (ex.sets) {
+            msg += `, ${ex.sets} sets`;
+          }
+        }
+        msg += '\n';
+      });
     }
     
     msg += '\nStrong session 🔥';
